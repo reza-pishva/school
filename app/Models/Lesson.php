@@ -11,4 +11,7 @@ class Lesson extends Model
     use SoftDeletes;
     protected $table='lessons';
     protected $guarded=[];
+    public function grade(){
+        $this->belongsTo(Grade::class);
+    }
 }
