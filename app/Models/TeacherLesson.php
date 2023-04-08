@@ -11,4 +11,8 @@ class TeacherLesson extends Model
     use SoftDeletes;
     protected $table='teacher_lessons';
     protected $guarded=[];
+
+    public function lessons(){
+        $this->hasMany(Lesson::class);
+    }
 }
