@@ -14,8 +14,8 @@ use App\Http\Controllers\GradeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('grades');
-// });
+Route::get('/school/grade/grades',[GradeController::class,'grades']);
+Route::get('/school/grade/{id}',[GradeController::class,'grade']);
+Route::get('/school/grade/remove/{id}',[GradeController::class,'remove']);
+// Route::put('/school/grade/{id}',[GradeController::class,'update']);
 
-Route::get('/',[GradeController::class,'grades']);

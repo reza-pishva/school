@@ -10,18 +10,27 @@ use App\Models\Lesson;
 class GradeController extends Controller
 {
     public function grades(){
-        dd(Grade::all());
+        $grade = Grade::all();
+        return view ('grades',['grade'=>$grade]);
     }
-    public function lessons($id){
-        dd(Grade::find($id)->lessons);
+    public function grade($id){
+        $grade = Grade::find($id);
+        return view ('grades',['grade'=>$grade]);        
     }
-    public function lesson($id,$id_lesson){
-        dd(Grade::find($id)->lessons[$id_lesson]['lesson_name']);
+    public function remove($id){
+        $result=Grade::find($id)->delete(); 
+        dd($result);          
     }
-    public function classes($id){
-        dd(Grade::find($id)->classes);
+    public function update($id){
+        Grade::find($id)->delete();           
     }
-    public function class_name($id,$id_class){
-        dd(Grade::find($id)->lessons[$id_class]['lesson_name']);
-    }
+    // public function lesson($id,$id_lesson){
+    //     dd(Grade::find($id)->lessons[$id_lesson]['lesson_name']);
+    // }
+    // public function classes($id){
+    //     dd(Grade::find($id)->classes);
+    // }
+    // public function class_name($id,$id_class){
+    //     dd(Grade::find($id)->lessons[$id_class]['lesson_name']);
+    // }
 }
