@@ -10,7 +10,7 @@ use App\Lesson;
 class Grade extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+    // use SoftDeletes;
     protected $table='grades';
     protected $guarded=[];
     public function lessons(){
