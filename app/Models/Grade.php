@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\ClassRoom;
-use App\Lesson;
+use App\Models\ClassRoom;
+use App\Models\Lesson;
 
 class Grade extends Model
 {
