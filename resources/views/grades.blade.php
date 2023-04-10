@@ -7,9 +7,8 @@
         <title>Laravel</title>
     </head>
     <body>
-        @foreach ($grade->classes as $item)
-          <div>{{$item['name']}}</div>
-        @endforeach
-        
+
+       {{$grade}}
+       
     </body>
 </html>

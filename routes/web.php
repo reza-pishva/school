@@ -17,5 +17,6 @@ use App\Http\Controllers\GradeController;
 Route::get('/school/grade/grades',[GradeController::class,'grades']);
 Route::get('/school/grade/{id}',[GradeController::class,'grade']);
 Route::get('/school/grade/remove/{id}',[GradeController::class,'remove']);
-// Route::put('/school/grade/{id}',[GradeController::class,'update']);
+Route::put('/school/grade/update/{id}',[GradeController::class,'update']);
+Route::post('/school/grade/store',[GradeController::class,'store']);
 

@@ -11,18 +11,20 @@ class GradeController extends Controller
 {
     public function grades(){
         $grade = Grade::all();
-        return view ('grades',['grade'=>$grade]);
+        return Grade::all();
     }
     public function grade($id){
         $grade = Grade::find($id);
-        return view ('grades',['grade'=>$grade]);        
+        return Grade::find($id);
     }
     public function remove($id){
-        $result=Grade::find($id)->delete(); 
-        dd($result);          
+        $result = Grade::find($id)->delete();     
     }
-    public function update($id){
-        Grade::find($id)->delete();           
+    public function update(Request $request , $id){
+        $result = Grade::find($id)->update(['grade_name'=>$request->grade_name]);    
+    }
+    public function store(Request $request ){
+        $result = Grade::create(['grade_name'=>$request->grade_name]);    
     }
     // public function lesson($id,$id_lesson){
     //     dd(Grade::find($id)->lessons[$id_lesson]['lesson_name']);
