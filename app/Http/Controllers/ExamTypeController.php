@@ -23,10 +23,10 @@ class ExamTypeController extends Controller
     public function update(Request $request , $id){
         $exam = ExamType::find($id);
         $exam->update(['exam_type'=>$request->exam_type]);
-        return $grade;  
+        return $exam;  
     }
     public function store(Request $request){
-        Grade::create(['exam_type' => $request->exam_type]); 
+        ExamType::create(['exam_type' => $request->exam_type]); 
         return $request->all();
     }
 }

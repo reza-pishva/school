@@ -9,7 +9,6 @@ use App\Exam;
 class ExamType extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $table='exam_types';
     protected $guarded=[];
