@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GradeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/school/grade/grades',[GradeController::class,'grades']);
+Route::get('/school/grade/{id}',[GradeController::class,'grade']);
+Route::get('/school/grade/remove/{id}',[GradeController::class,'remove']);
+Route::put('/school/grade/update/{id}',[GradeController::class,'update']);
+Route::post('/school/grade/store',[GradeController::class,'store']);

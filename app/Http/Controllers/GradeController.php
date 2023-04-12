@@ -23,8 +23,9 @@ class GradeController extends Controller
     public function update(Request $request , $id){
         $result = Grade::find($id)->update(['grade_name'=>$request->grade_name]);    
     }
-    public function store(Request $request ){
-        $result = Grade::create(['grade_name'=>$request->grade_name]);    
+    public function store(Request $request){
+        Grade::create(['grade_name' => $request->grade_name]); 
+        return $request->all();
     }
     // public function lesson($id,$id_lesson){
     //     dd(Grade::find($id)->lessons[$id_lesson]['lesson_name']);
