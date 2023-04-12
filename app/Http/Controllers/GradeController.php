@@ -21,7 +21,9 @@ class GradeController extends Controller
         $result = Grade::find($id)->delete();     
     }
     public function update(Request $request , $id){
-        $result = Grade::find($id)->update(['grade_name'=>$request->grade_name]);    
+        $grade = Grade::find($id);
+        $grade->update(['grade_name'=>$request->grade_name]);
+        return $grade;  
     }
     public function store(Request $request){
         Grade::create(['grade_name' => $request->grade_name]); 
