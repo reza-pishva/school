@@ -11,7 +11,6 @@ use App\Grade;
 class Exam extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $table='exams';
     protected $guarded=[];
