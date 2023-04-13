@@ -11,7 +11,7 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::all();
         return $classroom;
     }
-    public function student($id){
+    public function classroom($id){
         $classroom = ClassRoom::find($id);
         return $classroom;
     }

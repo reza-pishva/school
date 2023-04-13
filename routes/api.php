@@ -9,6 +9,10 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ClassRoomController;
+use App\Http\Controllers\ExamNameController;
+use App\Http\Controllers\TeacherLessonController;
+use App\Http\Controllers\TeacherClassController;
+use App\Http\Controllers\StudentClassController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,5 +64,29 @@ Route::post('/school/teacher/store',[TeacherController::class,'store']);
 Route::get('/school/classroom/classrooms',[ClassRoomController::class,'classrooms']);
 Route::get('/school/classroom/{id}',[ClassRoomController::class,'classroom']);
 Route::get('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
-Route::put('/school/classroom/update/{id}',[TeacherController::class,'update']);
+Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']);
 Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
+
+Route::get('/school/exam/exam_names',[ExamNameController::class,'exams']);
+Route::get('/school/exam/{id}',[ExamNameController::class,'exam']);
+Route::get('/school/exam/remove/{id}',[ExamNameController::class,'remove']);
+Route::put('/school/exam/update/{id}',[ExamNameController::class,'update']);
+Route::post('/school/exam/store',[ExamNameController::class,'store']);
+
+Route::get('/school/teacher-lesson/lessons',[TeacherLessonController::class,'lessons']);
+Route::get('/school/teacher-lesson/{id}',[TeacherLessonController::class,'lesson']);
+Route::get('/school/teacher-lesson/remove/{id}',[TeacherLessonController::class,'remove']);
+Route::put('/school/teacher-lesson/update/{id}',[TeacherLessonController::class,'update']);
+Route::post('/school/teacher-lesson/store',[TeacherLessonController::class,'store']);
+
+Route::get('/school/teacher-class/teacher-classes',[TeacherClassController::class,'teacher-classes']);
+Route::get('/school/teacher-class/{id}',[TeacherClassController::class,'teacher-class']);
+Route::get('/school/teacher-class/remove/{id}',[TeacherClassController::class,'remove']);
+Route::put('/school/teacher-class/update/{id}',[TeacherClassController::class,'update']);
+Route::post('/school/teacher-class/store',[TeacherClassController::class,'store']);
+
+Route::get('/school/student-classes/students',[StudentClassController::class,'students']);
+Route::get('/school/student-classes/{id}',[StudentClassController::class,'student']);
+Route::get('/school/student-classes/remove/{id}',[StudentClassController::class,'remove']);
+Route::put('/school/student-classes/update/{id}',[StudentClassController::class,'update']);
+Route::post('/school/student-classes/store',[StudentClassController::class,'store']);
