@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\ClassRoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +56,9 @@ Route::get('/school/teacher/{id}',[TeacherController::class,'teacher']);
 Route::get('/school/teacher/remove/{id}',[TeacherController::class,'remove']);
 Route::put('/school/teacher/update/{id}',[TeacherController::class,'update']);
 Route::post('/school/teacher/store',[TeacherController::class,'store']);
+
+Route::get('/school/classroom/classrooms',[ClassRoomController::class,'classrooms']);
+Route::get('/school/classroom/{id}',[ClassRoomController::class,'classroom']);
+Route::get('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
+Route::put('/school/classroom/update/{id}',[TeacherController::class,'update']);
+Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
