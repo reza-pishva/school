@@ -6,6 +6,7 @@ use App\Http\Controllers\GradeController;
 use App\Http\Controllers\ExamTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,9 @@ Route::get('/school/lesson/{id}',[LessonController::class,'lesson']);
 Route::get('/school/lesson/remove/{id}',[LessonController::class,'remove']);
 Route::put('/school/lesson/update/{id}',[LessonController::class,'update']);
 Route::post('/school/lesson/store',[LessonController::class,'store']);
+
+Route::get('/school/student/students',[StudentController::class,'students']);
+Route::get('/school/student/{id}',[StudentController::class,'student']);
+Route::get('/school/student/remove/{id}',[StudentController::class,'remove']);
+Route::put('/school/student/update/{id}',[StudentController::class,'update']);
+Route::post('/school/student/store',[StudentController::class,'store']);

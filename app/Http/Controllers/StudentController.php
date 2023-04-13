@@ -27,7 +27,7 @@ class StudentController extends Controller
                           'address' => $request->address,
                           'consideration' => $request->consideration,
                           'birthday' => $request->birthday,
-                          'user_id ' => $request->user_id]);
+                          'user_id' => $request->user_id]);
         return $student;  
     }
     public function store(Request $request){
@@ -38,7 +38,7 @@ class StudentController extends Controller
                          'address' => $request->address,
                          'consideration' => $request->consideration,
                          'birthday' => $request->birthday,
-                         'user_id ' => $request->user_id]); 
+                         'user_id' => $request->user_id]); 
         return $request->all();
     }
 }
