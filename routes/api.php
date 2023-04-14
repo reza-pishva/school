@@ -14,6 +14,7 @@ use App\Http\Controllers\TeacherLessonController;
 use App\Http\Controllers\TeacherClassController;
 use App\Http\Controllers\StudentClassController;
 use App\Http\Controllers\ClassProgramController;
+use App\Http\Controllers\ExamStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,3 +98,9 @@ Route::get('/school/class-program/program/{id}',[ClassProgramController::class,'
 Route::get('/school/class-program/remove/{id}',[ClassProgramController::class,'remove']);
 Route::put('/school/class-program/update/{id}',[ClassProgramController::class,'update']);
 Route::post('/school/class-program/store',[ClassProgramController::class,'store']);
+
+Route::get('/school/exam-student/exams',[ExamStudentController::class,'exams']);
+Route::get('/school/exam-student/exam/{id}',[ExamStudentController::class,'exam']);
+Route::get('/school/exam-student/remove/{id}',[ExamStudentController::class,'remove']);
+Route::put('/school/exam-student/update/{id}',[ExamStudentController::class,'update']);
+Route::post('/school/exam-student/store',[ExamStudentController::class,'store']);
