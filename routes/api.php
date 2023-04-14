@@ -13,6 +13,7 @@ use App\Http\Controllers\ExamNameController;
 use App\Http\Controllers\TeacherLessonController;
 use App\Http\Controllers\TeacherClassController;
 use App\Http\Controllers\StudentClassController;
+use App\Http\Controllers\ClassProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,3 +91,9 @@ Route::get('/school/student-classes/{id}',[StudentClassController::class,'studen
 Route::get('/school/student-classes/remove/{id}',[StudentClassController::class,'remove']);
 Route::put('/school/student-classes/update/{id}',[StudentClassController::class,'update']);
 Route::post('/school/student-classes/store',[StudentClassController::class,'store']);
+
+Route::get('/school/class-program/programs',[ClassProgramController::class,'programs']);
+Route::get('/school/class-program/program/{id}',[ClassProgramController::class,'program']);
+Route::get('/school/class-program/remove/{id}',[ClassProgramController::class,'remove']);
+Route::put('/school/class-program/update/{id}',[ClassProgramController::class,'update']);
+Route::post('/school/class-program/store',[ClassProgramController::class,'store']);

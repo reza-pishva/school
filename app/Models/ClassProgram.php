@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ClassProgram extends Model
 {
     use HasFactory;
-    use SoftDeletes;
     protected $table='class_programs';
     protected $guarded=[];
 }

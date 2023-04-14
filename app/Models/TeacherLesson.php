@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TeacherLesson extends Model
 {
     use HasFactory;
-    use SoftDeletes;
     protected $table='teacher_lessons';
     protected $guarded=[];
 
