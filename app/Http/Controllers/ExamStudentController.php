@@ -13,7 +13,7 @@ class ExamStudentController extends Controller
     }
     public function exam($id){
         $exams = ExamStudent::find($id);
-        return Exam::find($id);
+        return ExamStudent::find($id);
     }
     public function remove($id){
         $result = ExamStudent::find($id)->delete();     
