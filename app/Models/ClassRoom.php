@@ -11,4 +11,5 @@ class ClassRoom extends Model
     // use SoftDeletes;
     protected $table='class_rooms';
     protected $guarded=[];
+    
 }
