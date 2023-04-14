@@ -19,7 +19,8 @@ class ClassProgramController extends Controller
     }
     public function update(Request $request , $id){
         $program = ClassProgram::find($id);
-        $program->update(['lesson_id ' => $request->lesson_id ,
+        $program->update(['lesson_id' => $request->lesson_id,
+                          'class_id' => $request->class_id,
                           'year' => $request->year,
                           'time_start' => $request->time_start,
                           'time_end' => $request->time_end, 
@@ -27,9 +28,12 @@ class ClassProgramController extends Controller
         return $program;  
     }
     public function store(Request $request){
-        ClassProgram::create(['time_start' => $request->time_start,
-                         'time_end' => $request->time_end, 
-                         'day_of_week' => $request->day_of_week]); 
+        ClassProgram::create(['lesson_id' => $request->lesson_id,
+                              'class_id' => $request->class_id,
+                              'year' => $request->year,
+                              'time_start' => $request->time_start,
+                              'time_end' => $request->time_end, 
+                              'day_of_week' => $request->day_of_week]); 
         return $request->all();
     }
 }

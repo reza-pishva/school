@@ -17,7 +17,7 @@ class CreateClassProgramsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('class_id');
             $table->foreign('class_id')->references('id')->on('class_rooms')->onDelete('cascade');
-            $table->tinyInteger('year');
+            $table->bigInteger('year');
             $table->string('time_start');
             $table->string('time_end');
             $table->tinyInteger('day_of_week');
