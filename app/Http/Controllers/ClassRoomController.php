@@ -20,6 +20,12 @@ class ClassRoomController extends Controller
 
     public function classrooms(){
         $classroom = ClassRoom::all();
+        return $classroom;     
+    }
+
+    public function currentClassRooms(){
+        $year=$this->getYear();
+        $classroom = ClassRoom::year($year)->get();
         return $classroom;        
     }
 
@@ -39,7 +45,7 @@ class ClassRoomController extends Controller
                           'grade_id' => $request->grade_id]);
         return $classroom;  
     }
-    
+
     public function store(Request $request){
         ClassRoom::create(['year' => $request->year,
                          'name' => $request->name, 

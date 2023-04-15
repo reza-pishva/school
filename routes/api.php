@@ -69,6 +69,7 @@ Route::put('/school/teacher/update/{id}',[TeacherController::class,'update']);
 Route::post('/school/teacher/store',[TeacherController::class,'store']);
 
 Route::get('/school/classroom/classrooms',[ClassRoomController::class,'classrooms']);
+Route::get('/school/classroom/current-classrooms',[ClassRoomController::class,'currentClassRooms']);
 Route::get('/school/classroom/{id}',[ClassRoomController::class,'classroom']);
 Route::get('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
 Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']);

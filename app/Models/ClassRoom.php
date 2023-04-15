@@ -12,5 +12,10 @@ class ClassRoom extends Model
     // use SoftDeletes;
     protected $table='class_rooms';
     protected $guarded=[];
+
+    public function scopeYear($query, $type)
+    {
+        return $query->where('year', $type);
+    }
     
 }
