@@ -106,6 +106,7 @@ Route::put('/school/class-program/update/{id}',[ClassProgramController::class,'u
 Route::post('/school/class-program/store',[ClassProgramController::class,'store']);
 
 Route::get('/school/exam-student/exams',[ExamStudentController::class,'exams']);
+Route::get('/school/exam-student/current-exams',[ExamStudentController::class,'currentExams']);
 Route::get('/school/exam-student/exam/{id}',[ExamStudentController::class,'exam']);
 Route::get('/school/exam-student/remove/{id}',[ExamStudentController::class,'remove']);
 Route::put('/school/exam-student/update/{id}',[ExamStudentController::class,'update']);

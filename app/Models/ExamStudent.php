@@ -10,4 +10,9 @@ class ExamStudent extends Model
     use HasFactory;
     protected $table = "exam_students";
     protected $guarded = [];
+
+    public function scopeYear($query, $type)
+    {
+        return $query->where('year', $type);
+    }
 }
