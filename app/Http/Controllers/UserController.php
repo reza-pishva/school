@@ -8,7 +8,19 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function users(){
-        $user = User::all();
+        $user=User::all();
+        return $user;
+    }
+    public function students(){
+        $user=User::role(1)->get();
+        return $user;
+    }
+    public function teachers(){
+        $user=User::role(2)->get();
+        return $user;
+    }
+    public function personels(){
+        $user=User::role(3)->get();
         return $user;
     }
     public function user($id){

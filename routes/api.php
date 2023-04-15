@@ -40,6 +40,9 @@ Route::put('/school/exam/exam-type/update/{id}',[ExamTypeController::class,'upda
 Route::post('/school/exam/exam-type/store',[ExamTypeController::class,'store']);
 
 Route::get('/school/user/users',[UserController::class,'users']);
+Route::get('/school/user/students',[UserController::class,'students']);
+Route::get('/school/user/teachers',[UserController::class,'teachers']);
+Route::get('/school/user/personels',[UserController::class,'personels']);
 Route::get('/school/user/{id}',[UserController::class,'user']);
 Route::get('/school/user/remove/{id}',[UserController::class,'remove']);
 Route::put('/school/user/update/{id}',[UserController::class,'update']);

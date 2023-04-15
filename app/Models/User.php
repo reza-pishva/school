@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -47,13 +48,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function scopeStudents($query){
-        $query->where('role',1);
-    }
-    public function scopeTeachers($query){
-        $query->where('role',2);
-    }
-    public function scopePersonels($query){
-        $query->where('role',3);
+    // public function scopeStudents($query){
+    //     return $query->where('role',1);
+    // }
+    // public function scopeTeachers($query){
+    //     $query->where('role',2);
+    // }
+    // public function scopePersonels($query){
+    //     $query->where('role',3);
+    // }
+    public function scopeRole($query, $type)
+    {
+        return $query->where('role', $type);
     }
 }
