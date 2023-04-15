@@ -11,4 +11,6 @@ class TeacherToClass extends Model
     use SoftDeletes;
     protected $table='teacher_to_classes';
     protected $guarded=[];
+
+
 }

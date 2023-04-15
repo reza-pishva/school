@@ -82,6 +82,7 @@ Route::put('/school/exam/update/{id}',[ExamNameController::class,'update']);
 Route::post('/school/exam/store',[ExamNameController::class,'store']);
 
 Route::get('/school/teacher-lesson/lessons',[TeacherLessonController::class,'lessons']);
+Route::get('/school/teacher-lesson/current-lessons',[TeacherLessonController::class,'currentLessons']);
 Route::get('/school/teacher-lesson/{id}',[TeacherLessonController::class,'lesson']);
 Route::get('/school/teacher-lesson/remove/{id}',[TeacherLessonController::class,'remove']);
 Route::put('/school/teacher-lesson/update/{id}',[TeacherLessonController::class,'update']);

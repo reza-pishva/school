@@ -14,4 +14,9 @@ class TeacherLesson extends Model
     public function lessons(){
         $this->hasMany(Lesson::class);
     }
+
+    public function scopeYear($query, $type)
+    {
+        return $query->where('year', $type);
+    }
 }
