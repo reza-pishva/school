@@ -23,6 +23,14 @@ class UserController extends Controller
         $user=User::role(3)->get();
         return $user;
     }
+    public function men(){
+        $user=User::gender(1)->get();
+        return $user;
+    }
+    public function women(){
+        $user=User::gender(2)->get();
+        return $user;
+    }
     public function user($id){
         $user = User::find($id);
         return $user;

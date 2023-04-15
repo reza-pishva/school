@@ -61,4 +61,8 @@ class User extends Authenticatable
     {
         return $query->where('role', $type);
     }
+    public function scopeGender($query, $type)
+    {
+        return $query->where('gender', $type);
+    }
 }
