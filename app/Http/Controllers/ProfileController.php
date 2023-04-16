@@ -28,8 +28,8 @@ class ProfileController extends Controller
                            'consideration'=>$request->consideration,
                            'birthday'=>$request->birthday,
                            'major'=>$request->major,
-                           'user_id '=>$request->user_id ]);
-        return $students;  
+                           'user_id'=>$request->user_id]);
+        return $profiles;  
     }
     public function store(Request $request){
         Profile::create(['father_job'=>$request->father_job,
@@ -40,7 +40,7 @@ class ProfileController extends Controller
                         'consideration'=>$request->consideration,
                         'birthday'=>$request->birthday,
                         'major'=>$request->major,
-                        'user_id '=>$request->user_id ]); 
+                        'user_id'=>$request->user_id]); 
         return $request->all();
     }
 }
