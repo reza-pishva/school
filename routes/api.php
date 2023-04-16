@@ -6,8 +6,7 @@ use App\Http\Controllers\GradeController;
 use App\Http\Controllers\ExamTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LessonController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClassRoomController;
 use App\Http\Controllers\ExamNameController;
 use App\Http\Controllers\TeacherLessonController;
@@ -56,17 +55,11 @@ Route::get('/school/lesson/remove/{id}',[LessonController::class,'remove']);
 Route::put('/school/lesson/update/{id}',[LessonController::class,'update']);
 Route::post('/school/lesson/store',[LessonController::class,'store']);
 
-Route::get('/school/student/students',[StudentController::class,'students']);
-Route::get('/school/student/{id}',[StudentController::class,'student']);
-Route::get('/school/student/remove/{id}',[StudentController::class,'remove']);
-Route::put('/school/student/update/{id}',[StudentController::class,'update']);
-Route::post('/school/student/store',[StudentController::class,'store']);
-
-Route::get('/school/teacher/teachers',[TeacherController::class,'teachers']);
-Route::get('/school/teacher/{id}',[TeacherController::class,'teacher']);
-Route::get('/school/teacher/remove/{id}',[TeacherController::class,'remove']);
-Route::put('/school/teacher/update/{id}',[TeacherController::class,'update']);
-Route::post('/school/teacher/store',[TeacherController::class,'store']);
+Route::get('/school/profile/profiles',[ProfileController::class,'profiles']);
+Route::get('/school/profile/{id}',[ProfileController::class,'profile']);
+Route::get('/school/profile/remove/{id}',[ProfileController::class,'remove']);
+Route::put('/school/profile/update/{id}',[ProfileController::class,'update']);
+Route::post('/school/profile/store',[ProfileController::class,'store']);
 
 Route::get('/school/classroom/classrooms',[ClassRoomController::class,'classrooms']);
 Route::get('/school/classroom/current-classrooms',[ClassRoomController::class,'currentClassRooms']);

@@ -48,13 +48,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function student(){
-        return $this->hasOne(Student::class);
+    public function profile(){
+        return $this->hasOne(Profile::class);
     }
-    public function teacher(){
-        return $this->hasOne(Teacher::class);
-    }
-
     public function scopeRole($query, $type)
     {
         return $query->where('role', $type);
