@@ -10,6 +10,8 @@ class UserController extends Controller
     public function users(){
         $user=User::all();
         return $user;
+        // $user=User::find(1)->student->father_job;
+        // return $user;
     }
     public function students(){
         $user=User::role(1)->get();

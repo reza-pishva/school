@@ -7,17 +7,24 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
+
+
     public function students(){
         $student = Student::all();
         return $student;
+        // $student = Student::find(1);
+        // dd($student->user->f_name);
     }
+
     public function student($id){
         $student = Student::find($id);
         return $student;
     }
+
     public function remove($id){
         $result = Student::find($id)->delete();     
     }
+
     public function update(Request $request , $id){
         $student = Student::find($id);
         $student->update(['father_job' => $request->father_job,
@@ -30,6 +37,7 @@ class StudentController extends Controller
                           'user_id' => $request->user_id]);
         return $student;  
     }
+
     public function store(Request $request){
         Student::create(['father_job' => $request->father_job,
                          'mother_job' => $request->mother_job, 
