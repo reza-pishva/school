@@ -19,8 +19,6 @@ class CreateTeacherToClassesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('class_id');
             $table->foreign('class_id')->references('id')->on('class_rooms')->onDelete('cascade');
-            // $table->unsignedBigInteger('lesson_id');
-            // $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
             $table->timestamps();
         });
     }
