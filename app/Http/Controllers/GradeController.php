@@ -10,11 +10,8 @@ use App\Models\Lesson;
 class GradeController extends Controller
 {
     public function grades(){
-        $grade = Grade::find(1)->lessons;
-        return $grade;
-
-        // $grade = Grade::all();
-        // return Grade::all();
+        $grade = Grade::all();
+        return Grade::all();
     }
     public function grade($id){
         $grade = Grade::find($id);
