@@ -16,6 +16,7 @@ class CreateExamStudentsTable extends Migration
         Schema::create('exam_students', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('year');
+            $table->float('score');
             $table->bigInteger('date_shamsi');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
