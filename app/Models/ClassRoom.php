@@ -22,7 +22,7 @@ class ClassRoom extends Model
         return $this->belongsTo(Grade::class);
     }
     public function users(){
-        return $this->belongsToMany(ClassRoom::class,'student_to_classes','class_id','user_id','id','id');
+        return $this->belongsToMany(User::class,'student_to_classes','class_id','user_id','id','id');
     }
     
 }

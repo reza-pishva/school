@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function users(){
-        $user=User::find(1);
+        $user=User::find(2);
         return $user->classes;
         // $user=User::all();
         // return $user;
