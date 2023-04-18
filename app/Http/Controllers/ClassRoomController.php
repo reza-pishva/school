@@ -19,10 +19,19 @@ class ClassRoomController extends Controller
     }
 
     public function classrooms(){
-        $classroom = ClassRoom::find(2);
-        return $classroom->users;     
-        // $classroom = ClassRoom::all();
-        // return $classroom;     
+        // $classroom = ClassRoom::find(2);
+        // return $classroom->users;     
+        $classroom = ClassRoom::all();
+        return $classroom;     
+    }
+
+    public function class_teachers($id){
+        $classroom = ClassRoom::find($id);
+        return $classroom->users->where('role',2);   
+    }
+    public function class_students($id){
+        $classroom = ClassRoom::find($id);
+        return $classroom->users->where('role',1);     
     }
 
     public function currentClassRooms(){

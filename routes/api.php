@@ -64,6 +64,8 @@ Route::post('/school/profile/store',[ProfileController::class,'store']);
 Route::get('/school/classroom/classrooms',[ClassRoomController::class,'classrooms']);
 Route::get('/school/classroom/current-classrooms',[ClassRoomController::class,'currentClassRooms']);
 Route::get('/school/classroom/{id}',[ClassRoomController::class,'classroom']);
+Route::get('/school/classroom/class-teachers/{id}',[ClassRoomController::class,'class_teachers']);
+Route::get('/school/classroom/class-students/{id}',[ClassRoomController::class,'class_students']);
 Route::get('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
 Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']);
 Route::post('/school/classroom/store',[ClassRoomController::class,'store']);

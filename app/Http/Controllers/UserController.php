@@ -8,10 +8,16 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function users(){
-        // $user=User::find(1);
-        // return $user->classes->where('year',1402);
         $user=User::all();
         return $user;
+    }
+    public function student_class($id){
+        $user=User::find($id);
+        return $user->classes;
+    }
+    public function teacher_class($id){
+        $user=User::find($id);
+        return $user->classes;
     }
     public function students(){
         $user=User::role(1)->get();

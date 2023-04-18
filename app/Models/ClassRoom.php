@@ -25,5 +25,9 @@ class ClassRoom extends Model
     public function users(){
         return $this->belongsToMany(User::class,'student_to_classes','class_id','user_id','id','id');
     }
+
+    public function teacher_user(){
+        return $this->belongsToMany(User::class,'teacher_to_classes','class_id','user_id','id','id');
+    }
     
 }
