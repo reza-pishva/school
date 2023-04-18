@@ -19,8 +19,10 @@ class ClassRoomController extends Controller
     }
 
     public function classrooms(){
-        $classroom = ClassRoom::all();
-        return $classroom;     
+        $classroom = ClassRoom::find(2);
+        return $classroom->users;     
+        // $classroom = ClassRoom::all();
+        // return $classroom;     
     }
 
     public function currentClassRooms(){

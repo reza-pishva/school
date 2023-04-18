@@ -10,4 +10,6 @@ class StudentToClass extends Model
     use HasFactory;
     protected $table='student_to_classes';
     protected $guarded=[];
+
+    
 }

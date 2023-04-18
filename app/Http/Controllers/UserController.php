@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function users(){
-        $user=User::all();
-        return $user;
+        $user=User::find(1);
+        return $user->classes;
+        // $user=User::all();
+        // return $user;
     }
     public function students(){
         $user=User::role(1)->get();

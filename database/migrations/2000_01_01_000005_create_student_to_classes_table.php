@@ -14,11 +14,11 @@ class CreateStudentToClassesTable extends Migration
     public function up()
     {
         Schema::create('student_to_classes', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('class_id');
             $table->foreign('class_id')->references('id')->on('class_rooms')->onDelete('cascade');
+            $table->primary(['user_id','class_id']);
             $table->timestamps();
         });
     }

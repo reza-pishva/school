@@ -22,4 +22,7 @@ class Grade extends Model
     public function classes(){
         return $this->hasMany(ClassRoom::class);
     }
+    public function exams(){
+        return $this->hasMany(Exam::class);
+    }
 }
