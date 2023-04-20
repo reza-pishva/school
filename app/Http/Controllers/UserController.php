@@ -15,10 +15,10 @@ class UserController extends Controller
         $user=User::find($id);
         return $user->classes->where('year',$year);
     }
-    public function teacher_class($id){
-        $user=User::find($id);
-        return $user->classes;
-    }
+    // public function teacher_class($id,$year){
+    //     $user=User::find($id);
+    //     return $user->classes->where('year',$year)->where('role',2);
+    // }
     public function students(){
         $user=User::role(1)->get();
         return $user;
