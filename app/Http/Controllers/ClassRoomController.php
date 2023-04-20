@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ClassRoom;
+use App\Models\User;
 
 class ClassRoomController extends Controller
 {
@@ -48,10 +49,5 @@ class ClassRoomController extends Controller
                           'grade_id' => $request->grade_id]);
         return $classroom;  
     }
-    public function store(Request $request){
-        ClassRoom::create(['year' => $request->year,
-                         'name' => $request->name, 
-                         'grade_id' => $request->grade_id]); 
-        return $request->all();
-    }
+    
 }

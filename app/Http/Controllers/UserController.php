@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\ClassRoom;
 use App\Models\User;
 
 use Illuminate\Http\Request;
@@ -65,4 +66,11 @@ class UserController extends Controller
                       'password' => $request->password]); 
         return $request->all();
     }
+    public function add_user($class_id , $user_id){
+        $class = ClassRoom::find($class_id);
+        $user = User::find($user_id);
+        $result = $user->classes()->save($class);
+        return $result;
+    }
+
 }
