@@ -66,12 +66,6 @@ class UserController extends Controller
                       'password' => $request->password]); 
         return $request->all();
     }
-    public function add_user($class_id , $user_id){
-        $class = ClassRoom::find($class_id);
-        $user = User::find($user_id);
-        $result = $user->classes()->save($class);
-        return $result;
-    }
 
     public function add_user_class(Request $request){
         $class = ClassRoom::find($request->class_id);
@@ -86,5 +80,7 @@ class UserController extends Controller
         $result = $user->classes()->detach($class);
         return $result;
     }
+
+   
 
 }

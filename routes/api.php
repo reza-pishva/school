@@ -74,8 +74,6 @@ Route::get('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']
 Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']);
 Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
 
-
-
 Route::get('/school/exam/exam_names',[ExamNameController::class,'exams']);
 Route::get('/school/exam/{id}',[ExamNameController::class,'exam']);
 Route::get('/school/exam/remove/{id}',[ExamNameController::class,'remove']);
