@@ -17,14 +17,10 @@ class ClassRoomController extends Controller
         }
         return $year; 
     }
-
     public function classrooms(){
-        // $classroom = ClassRoom::find(2);
-        // return $classroom->users;     
         $classroom = ClassRoom::all();
         return $classroom;     
     }
-
     public function class_teachers($id){
         $classroom = ClassRoom::find($id);
         return $classroom->users->where('role',2);   
@@ -33,22 +29,18 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::find($id);
         return $classroom->users->where('role',1);     
     }
-
     public function currentClassRooms(){
         $year=$this->getYear();
         $classroom = ClassRoom::year($year)->get();
         return $classroom;        
     }
-
     public function classroom($id){
         $classroom = ClassRoom::find($id);
         return $classroom;
     }
-
     public function remove($id){
         $result = ClassRoom::find($id)->delete();     
     }
-
     public function update(Request $request , $id){
         $classroom = ClassRoom::find($id);
         $classroom->update(['year' => $request->year,
@@ -56,7 +48,6 @@ class ClassRoomController extends Controller
                           'grade_id' => $request->grade_id]);
         return $classroom;  
     }
-
     public function store(Request $request){
         ClassRoom::create(['year' => $request->year,
                          'name' => $request->name, 

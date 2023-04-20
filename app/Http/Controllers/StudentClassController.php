@@ -13,7 +13,8 @@ class StudentClassController extends Controller
     }
     public function student($id){
         $students = StudentToClass::find($id);
-        return StudentToClass::find($id);
+        // return StudentToClass::find($id);
+        return $students;
     }
     public function remove($id){
         $result = StudentToClass::find($id)->delete();     

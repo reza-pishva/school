@@ -11,9 +11,9 @@ class UserController extends Controller
         $user=User::all();
         return $user;
     }
-    public function student_class($id){
+    public function student_class($id,$year){
         $user=User::find($id);
-        return $user->classes;
+        return $user->classes->where('year',$year);
     }
     public function teacher_class($id){
         $user=User::find($id);
