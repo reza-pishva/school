@@ -73,4 +73,18 @@ class UserController extends Controller
         return $result;
     }
 
+    public function add_user_class(Request $request){
+        $class = ClassRoom::find($request->class_id);
+        $user = User::find($request->user_id);
+        $result = $user->classes()->attach($class);
+        return $result;
+    }
+
+    public function remove_user_class(Request $request){
+        $class = ClassRoom::find($request->class_id);
+        $user = User::find($request->user_id);
+        $result = $user->classes()->detach($class);
+        return $result;
+    }
+
 }
