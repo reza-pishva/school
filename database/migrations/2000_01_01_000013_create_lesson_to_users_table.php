@@ -19,7 +19,6 @@ class CreateLessonToUsersTable extends Migration
             $table->unsignedBigInteger('lesson_id');
             $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
             $table->primary(['user_id','lesson_id']);
-            $table->timestamps();
         });
     }
 
