@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\ClassRoom;
 use App\Models\User;
+use App\Models\Lesson;
 
 use Illuminate\Http\Request;
 
@@ -28,9 +29,9 @@ class UserController extends Controller
         $user=User::role(3)->get();
         return $user;
     }
-    public function user_lesson($id){
+    public function user_lesson($id , $grade_id){
         $user=User::find($id);
-        return $user->lessons;
+        return $user->lessons->where('grade_id', $grade_id);
     }
     public function men(){
         $user=User::gender(1)->get();
@@ -82,6 +83,20 @@ class UserController extends Controller
         $class = ClassRoom::find($request->class_id);
         $user = User::find($request->user_id);
         $result = $user->classes()->detach($class);
+        return $result;
+    }
+
+    public function add_user_lesson(Request $request){
+        $lesson = Lesson::find($request->lesson_id);
+        $user = User::find($request->user_id);
+        $result = $user->lessons()->attach($lesson);
+        return $result;
+    }
+
+    public function remove_user_lesson(Request $request){
+        $lesson = Lesson::find($request->lesson_id);
+        $user = User::find($request->user_id);
+        $result = $user->lessons()->detach($lesson);
         return $result;
     }
 
