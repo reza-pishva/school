@@ -49,5 +49,10 @@ class ClassRoomController extends Controller
                           'grade_id' => $request->grade_id]);
         return $classroom;  
     }
-    
+    public function store(Request $request){
+        $classroom = ClassRoom::create(['year' => $request->year,
+                          'name' => $request->name, 
+                          'grade_id' => $request->grade_id]);
+        return $classroom;  
+    }
 }

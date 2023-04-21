@@ -43,13 +43,13 @@ Route::get('/school/user/students',[UserController::class,'students']);
 Route::get('/school/user/teachers',[UserController::class,'teachers']);
 Route::get('/school/user/personels',[UserController::class,'personels']);
 Route::get('/school/user/user-class/{id}/{year}',[UserController::class,'user_class']);
+Route::get('/school/user/user-lesson/{id}',[UserController::class,'user_lesson']);
 Route::get('/school/user/men',[UserController::class,'men']);
 Route::get('/school/user/women',[UserController::class,'women']);
 Route::get('/school/user/{id}',[UserController::class,'user']);
 Route::get('/school/user/remove/{id}',[UserController::class,'remove']);
 Route::put('/school/user/update/{id}',[UserController::class,'update']);
 Route::post('/school/user/store',[UserController::class,'store']);
-Route::get('/school/user/add-user/{class_id}/{user_id}',[UserController::class,'add_user']);
 Route::post('/school/user/add-user',[UserController::class,'add_user_class']);
 Route::delete('/school/classroom/remove-user/{class_id}/{user_id}',[UserController::class,'remove_user_class']);
 

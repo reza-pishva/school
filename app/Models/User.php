@@ -54,6 +54,9 @@ class User extends Authenticatable
     public function classes(){
         return $this->belongsToMany(ClassRoom::class,'user_to_classes','user_id','class_id','id','id');
     }
+    public function lessons(){
+        return $this->belongsToMany(Lesson::class,'lesson_to_users','user_id','lesson_id','id','id');
+    }
 
 
 
