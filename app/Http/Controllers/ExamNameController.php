@@ -21,13 +21,13 @@ class ExamNameController extends Controller
         $exams = Exam::find($id);
         $exams->update(['grade_id'=>$request->grade_id,
                         'exam_type_id'=>$request->exam_type_id,
-                        'exam_name'=>$request->exam_name]);
+                        'lesson_id'=>$request->lesson_id]);
         return $exams;  
     }
     public function store(Request $request){
         Exam::create(['grade_id'=>$request->grade_id,
                       'exam_type_id'=>$request->exam_type_id,
-                      'exam_name'=>$request->exam_name]); 
+                      'lesson_id'=>$request->lesson_id]); 
         return $request->all();
     }
 }
