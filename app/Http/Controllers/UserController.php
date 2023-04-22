@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Lesson;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -13,9 +14,13 @@ class UserController extends Controller
         $user=User::all();
         return $user;
     }
-    public function user_class($id,$year){
-        $user=User::find($id);
+    public function user_class($user_id,$year){
+        $user=User::find($user_id);
         return $user->classes->where('year',$year);
+    }
+    public function user_classes($user_id){
+        $user=User::find($user_id);
+        return $user->classes;
     }
     public function students(){
         $user=User::role(1)->get();
@@ -29,14 +34,9 @@ class UserController extends Controller
         $user=User::role(3)->get();
         return $user;
     }
-    public function user_lesson2($id , $grade_id){
-        $user=User::find($id);
-        return $user->lessons->where('grade_id', $grade_id);
-    }
-    public function user_lessons($id , $grade_id){
-        $class_id=User::find($id)->classes->first()->pivot->class_id;
-        // $class_id=User::find($id)->classes->first()->pivot->class_id;
-        $lessons = ClassRoom::find($class_id)->lessons->where('grade_id',$grade_id);
+    public function user_lessons($user_id , $year){
+        $grade_id = User::find($user_id)->classes->where('year',$year)->first()->grade_id;
+        $lessons = DB::table('lessons')->where('grade_id', $grade_id)->get();
         return $lessons;
     }
     public function men(){
