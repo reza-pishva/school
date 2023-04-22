@@ -92,12 +92,12 @@ class UserController extends Controller
         return $result;
     }
 
-    public function add_user_lesson(Request $request){
-        $lesson = Lesson::find($request->lesson_id);
-        $user = User::find($request->user_id);
-        $result = $user->lessons()->attach($lesson);
-        return $result;
-    }
+    // public function add_user_lesson(Request $request){
+    //     $lesson = Lesson::find($request->lesson_id);
+    //     $user = User::find($request->user_id);
+    //     $result = $user->lessons()->attach($lesson);
+    //     return $result;
+    // }
 
     public function remove_user_lesson(Request $request){
         $lesson = Lesson::find($request->lesson_id);
