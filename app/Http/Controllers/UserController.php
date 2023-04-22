@@ -29,9 +29,15 @@ class UserController extends Controller
         $user=User::role(3)->get();
         return $user;
     }
-    public function user_lesson($id , $grade_id){
+    public function user_lesson2($id , $grade_id){
         $user=User::find($id);
         return $user->lessons->where('grade_id', $grade_id);
+    }
+    public function user_lessons($id , $grade_id){
+        $class_id=User::find($id)->classes->first()->pivot->class_id;
+        // $class_id=User::find($id)->classes->first()->pivot->class_id;
+        $lessons = ClassRoom::find($class_id)->lessons->where('grade_id',$grade_id);
+        return $lessons;
     }
     public function men(){
         $user=User::gender(1)->get();

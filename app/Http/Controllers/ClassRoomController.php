@@ -39,6 +39,10 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::find($id);
         return $classroom;
     }
+    public function class_lessons($class_id , $grade_id){
+        $classroom = ClassRoom::find($class_id);
+        return $classroom->lessons->where('grade_id' , $grade_id);
+    }
     public function remove($id){
         $result = ClassRoom::find($id)->delete();     
     }

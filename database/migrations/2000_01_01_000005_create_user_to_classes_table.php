@@ -19,6 +19,7 @@ class CreateUserToClassesTable extends Migration
             $table->unsignedBigInteger('class_id');
             $table->foreign('class_id')->references('id')->on('class_rooms')->onDelete('cascade');
             $table->primary(['user_id','class_id']);
+            $table->BigInteger('year');
         });
     }
 
