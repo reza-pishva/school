@@ -43,7 +43,7 @@ Route::get('/school/user/students',[UserController::class,'students']);
 Route::get('/school/user/teachers',[UserController::class,'teachers']);
 Route::get('/school/user/personels',[UserController::class,'personels']);
 Route::get('/school/user/user-class/{user_id}/{year}',[UserController::class,'user_class']);
-// Route::get('/school/user/user-classes/{user_id}',[UserController::class,'user_classes']);
+Route::get('/school/user/user-classes/{user_id}',[UserController::class,'user_classes']);
 Route::get('/school/user/user-lessons/{user_id}/$year',[UserController::class,'user_lessons']);
 Route::get('/school/user/men',[UserController::class,'men']);
 Route::get('/school/user/women',[UserController::class,'women']);
