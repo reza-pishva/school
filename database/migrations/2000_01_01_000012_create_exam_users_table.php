@@ -15,7 +15,6 @@ class CreateExamUsersTable extends Migration
     {
         Schema::create('exam_users', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('date');
             $table->float('score');
             $table->bigInteger('date_shamsi');
             $table->unsignedBigInteger('user_id');

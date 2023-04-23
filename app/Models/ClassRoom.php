@@ -28,8 +28,6 @@ class ClassRoom extends Model
     public function lessons(){
         return $this->belongsToMany(Lesson::class,'lesson_to_classes','class_id','lesson_id','id','id');
     }
-    public function exams(){
-        return $this->belongsToMany(Exam::class,'exam_to_classes','class_id','exam_id','id','id');
-    }
+
     
 }
