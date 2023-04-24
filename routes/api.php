@@ -55,10 +55,10 @@ Route::post('/school/user/store',[UserController::class,'store']);
 Route::post('/school/user/add-user',[UserController::class,'add_user_class']);
 Route::post('/school/user/remove-user',[UserController::class,'remove_user_class']);
 Route::post('/school/user/add-lesson',[UserController::class,'add_user_lesson']);
-//Route::delete('/school/user/remove-lesson/{lesson_id}/{user_id}',[UserController::class,'remove_user_lesson']);
-Route::get('/school/user/user-lessons/{id}/{grade_id}',[UserController::class,'user_lessons']);
+Route::get('/school/user/user-lessons/{id}/{year}',[UserController::class,'user_lessons']);
+Route::get('/school/user/user-lessons-current-year/{id}',[UserController::class,'user_lessons_current_year']);
 
-Route::get('/school/lesson/lessons',[LessonController::class,'lessons']);
+Route::get('/school/lesson/lessons/{grade_id}',[LessonController::class,'lessons']);
 Route::get('/school/lesson/{id}',[LessonController::class,'lesson']);
 Route::get('/school/lesson/remove/{id}',[LessonController::class,'remove']);
 Route::put('/school/lesson/update/{id}',[LessonController::class,'update']);

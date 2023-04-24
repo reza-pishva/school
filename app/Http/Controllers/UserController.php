@@ -11,6 +11,17 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+    public function getYear(){
+        $date = \Morilog\Jalali\Jalalian::now();
+        $year = substr($date,0,4); 
+        $month = substr($date,5,2); 
+        $day = substr($date,8,2); 
+        if($month<4){
+          return $year-1; 
+        }
+        return $year; 
+    }
+
     public function users(){
         $user=User::all();
         return $user;
@@ -39,11 +50,19 @@ class UserController extends Controller
         $user=User::role(3)->get();
         return $user;
     }
-    public function user_lessons($user_id , $year){
+
+    public function user_lessons_current_year($user_id){
+        $grade_id = User::find($user_id)->classes->where('year',$this->getYear())->first()->grade_id;
+        $lessons = DB::table('lessons')->where('grade_id', $grade_id)->get();
+        return $lessons;
+    }
+
+    public function user_lessons($user_id, $year){
         $grade_id = User::find($user_id)->classes->where('year',$year)->first()->grade_id;
         $lessons = DB::table('lessons')->where('grade_id', $grade_id)->get();
         return $lessons;
     }
+
     public function men(){
         $user=User::gender(1)->get();
         return $user;

@@ -7,13 +7,12 @@ use App\Models\Lesson;
 
 class LessonController extends Controller
 {
-    public function lessons(){
-        $lesson = Lesson::all();
-        return $lesson;
-    }
     public function lesson($id){
         $lesson = Lesson::find($id);
         return $lesson;
+    }
+    public function lessons($grade_id){
+        return Lesson::where('grade_id',$grade_id)->get();
     }
     public function remove($id){
         $result = Lesson::find($id)->delete();     
