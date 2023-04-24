@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\ClassRoom;
 use App\Models\User;
 use App\Models\Lesson;
+use App\Models\Profile;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,10 @@ class UserController extends Controller
     public function user_class($user_id,$year){
         $user=User::find($user_id);
         return $user->classes->where('year',$year);
+    }
+    public function user_profile($id){
+        $user=User::find($id);
+        return $user->profile;
     }
     public function user_classes($user_id){
         $user=User::find($user_id);

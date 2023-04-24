@@ -47,6 +47,7 @@ Route::get('/school/user/user-classes/{user_id}',[UserController::class,'user_cl
 Route::get('/school/user/user-lessons/{user_id}/$year',[UserController::class,'user_lessons']);
 Route::get('/school/user/men',[UserController::class,'men']);
 Route::get('/school/user/women',[UserController::class,'women']);
+Route::get('/school/user-profile/{id}',[UserController::class,'user_profile']);
 Route::get('/school/user/{id}',[UserController::class,'user']);
 Route::get('/school/user/remove/{id}',[UserController::class,'remove']);
 Route::put('/school/user/update/{id}',[UserController::class,'update']);
@@ -65,6 +66,7 @@ Route::post('/school/lesson/store',[LessonController::class,'store']);
 
 Route::get('/school/profile/profiles',[ProfileController::class,'profiles']);
 Route::get('/school/profile/{id}',[ProfileController::class,'profile']);
+Route::get('/school/profile-user/{id}',[ProfileController::class,'profile_user']);
 Route::get('/school/profile/remove/{id}',[ProfileController::class,'remove']);
 Route::put('/school/profile/update/{id}',[ProfileController::class,'update']);
 Route::post('/school/profile/store',[ProfileController::class,'store']);

@@ -18,6 +18,10 @@ class ProfileController extends Controller
     public function remove($id){
         $result = Profile::find($id)->delete();     
     }
+    public function profile_user($id){
+        $profile = Profile::find($id);        
+        return $profile->user;
+    }
     public function update(Request $request , $id){
         $profiles = Profile::find($id);
         $profiles->update(['father_job'=>$request->father_job,
