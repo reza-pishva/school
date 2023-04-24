@@ -52,9 +52,9 @@ Route::get('/school/user/remove/{id}',[UserController::class,'remove']);
 Route::put('/school/user/update/{id}',[UserController::class,'update']);
 Route::post('/school/user/store',[UserController::class,'store']);
 Route::post('/school/user/add-user',[UserController::class,'add_user_class']);
-Route::delete('/school/user/remove-user/{class_id}/{user_id}',[UserController::class,'remove_user_class']);
+Route::post('/school/user/remove-user',[UserController::class,'remove_user_class']);
 Route::post('/school/user/add-lesson',[UserController::class,'add_user_lesson']);
-Route::delete('/school/user/remove-lesson/{lesson_id}/{user_id}',[UserController::class,'remove_user_lesson']);
+//Route::delete('/school/user/remove-lesson/{lesson_id}/{user_id}',[UserController::class,'remove_user_lesson']);
 Route::get('/school/user/user-lessons/{id}/{grade_id}',[UserController::class,'user_lessons']);
 
 Route::get('/school/lesson/lessons',[LessonController::class,'lessons']);
