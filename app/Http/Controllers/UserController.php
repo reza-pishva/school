@@ -22,15 +22,7 @@ class UserController extends Controller
         return $year; 
     }
 
-    // public function users(){
-    //     $user=User::all();
-    //     return $user;
-    // }
 
-    // public function user_class($user_id,$year){
-    //     $user=User::find($user_id);
-    //     return $user->classes->where('year',$year);
-    // }
     public function users(){
         return User::users();
     }
@@ -46,6 +38,18 @@ class UserController extends Controller
     public function students(){
         return User::students();
     }
+    public function teachers(){
+        return User::teachers();
+    }
+    // public function users(){
+    //     $user=User::all();
+    //     return $user;
+    // }
+
+    // public function user_class($user_id,$year){
+    //     $user=User::find($user_id);
+    //     return $user->classes->where('year',$year);
+    // }
     // public function user_profile($id){
     //     $user=User::find($id);
     //     return $user->profile;
@@ -60,10 +64,11 @@ class UserController extends Controller
     //     $user=User::role(1)->get();
     //     return $user;
     // }
-    public function teachers(){
-        $user=User::role(2)->get();
-        return $user;
-    }
+    // public function teachers(){
+    //     $user=User::role(2)->get();
+    //     return $user;
+    // }
+
     public function personels(){
         $user=User::role(3)->get();
         return $user;
