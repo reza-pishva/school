@@ -68,6 +68,14 @@ class User extends Authenticatable
         $user=User::find($id);
         return $user->profile;
     }
+    public function user_classes($user_id){
+        $user=User::find($user_id);
+        return $user->classes;
+    }
+    public function students(){
+        $user=User::role(1)->get();
+        return $user;
+    }
 
 
 

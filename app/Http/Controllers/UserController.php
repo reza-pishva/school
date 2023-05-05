@@ -26,31 +26,40 @@ class UserController extends Controller
     //     $user=User::all();
     //     return $user;
     // }
-    public function users(){
-        return User::users();
-    }
+
     // public function user_class($user_id,$year){
     //     $user=User::find($user_id);
     //     return $user->classes->where('year',$year);
     // }
+    public function users(){
+        return User::users();
+    }
     public function user_class($user_id,$year){        
         return User::user_class($user_id,$year);
     }
     public function user_profile($id){
         return User::user_profile($id);
     }
+    public function user_classes($user_id){
+        return User::user_classes($user_id);
+    }
+    public function students(){
+        return User::students();
+    }
     // public function user_profile($id){
     //     $user=User::find($id);
     //     return $user->profile;
     // }
-    public function user_classes($user_id){
-        $user=User::find($user_id);
-        return $user->classes;
-    }
-    public function students(){
-        $user=User::role(1)->get();
-        return $user;
-    }
+
+    // public function user_classes($user_id){
+    //     $user=User::find($user_id);
+    //     return $user->classes;
+    // }
+
+    // public function students(){
+    //     $user=User::role(1)->get();
+    //     return $user;
+    // }
     public function teachers(){
         $user=User::role(2)->get();
         return $user;
