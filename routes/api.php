@@ -26,6 +26,7 @@ use App\Http\Controllers\ExamStudentController;
 |
 */
 
+/* Grade table routes */
 Route::get('/school/grade/grades',[GradeController::class,'grades']);
 Route::get('/school/grade/{id}',[GradeController::class,'grade']);
 Route::get('/school/grade/remove/{id}',[GradeController::class,'remove']);
