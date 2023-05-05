@@ -56,6 +56,16 @@ class User extends Authenticatable
     }
 
 
+    public function users(){
+        $user=User::all();
+        return $user;
+    }
+    public function user_class($user_id,$year){
+        $user=User::find($user_id);
+        return $user->classes->where('year',$year);
+    }
+
+
 
 
 

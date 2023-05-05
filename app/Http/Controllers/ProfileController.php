@@ -36,15 +36,22 @@ class ProfileController extends Controller
         return $profiles;  
     }
     public function store(Request $request){
-        Profile::create(['father_job'=>$request->father_job,
-                        'mother_job'=>$request->mother_job,
-                        'father_phone_number'=>$request->father_phone_number,
-                        'mother_phone_number'=>$request->mother_phone_number,
-                        'address'=>$request->address,
-                        'consideration'=>$request->consideration,
-                        'birthday'=>$request->birthday,
-                        'major'=>$request->major,
-                        'user_id'=>$request->user_id]); 
-        return $request->all();
+
+        if(Profile::where('user_id',$request->user_id)->get()->count()==0){
+            Profile::create(['father_job'=>$request->father_job,
+            'mother_job'=>$request->mother_job,
+            'father_phone_number'=>$request->father_phone_number,
+            'mother_phone_number'=>$request->mother_phone_number,
+            'address'=>$request->address,
+            'consideration'=>$request->consideration,
+            'birthday'=>$request->birthday,
+            'major'=>$request->major,
+            'user_id'=>$request->user_id]); 
+            return true;
+        }else{
+            return false;
+        }
+        
+        
     }
 }
