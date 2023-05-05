@@ -37,9 +37,12 @@ class UserController extends Controller
         return User::user_class($user_id,$year);
     }
     public function user_profile($id){
-        $user=User::find($id);
-        return $user->profile;
+        return User::user_profile($id);
     }
+    // public function user_profile($id){
+    //     $user=User::find($id);
+    //     return $user->profile;
+    // }
     public function user_classes($user_id){
         $user=User::find($user_id);
         return $user->classes;

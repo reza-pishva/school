@@ -64,6 +64,10 @@ class User extends Authenticatable
         $user=User::find($user_id);
         return $user->classes->where('year',$year);
     }
+    public function user_profile($id){
+        $user=User::find($id);
+        return $user->profile;
+    }
 
 
 
