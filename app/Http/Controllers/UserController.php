@@ -78,7 +78,7 @@ class UserController extends Controller
     public function remove($id){
         $result = User::find($id)->delete();     
     }
-    public function update($request , $id){
+    public function update(Request $request , $id){
         $user = User::find($id);
         $user->update(['f_name' => $request->f_name,
                        'l_name' => $request->l_name,
