@@ -56,13 +56,11 @@ class UserController extends Controller
         $lessons = DB::table('lessons')->where('grade_id', $grade_id)->get();
         return $lessons;
     }
-
     public function user_lessons($user_id, $year){
         $grade_id = User::find($user_id)->classes->where('year',$year)->first()->grade_id;
         $lessons = DB::table('lessons')->where('grade_id', $grade_id)->get();
         return $lessons;
     }
-
     public function men(){
         $user=User::gender(1)->get();
         return $user;
@@ -101,7 +99,6 @@ class UserController extends Controller
                       'password' => $request->password]); 
         return $request->all();
     }
-
     public function add_user_class(Request $request){
         $class = ClassRoom::find($request->class_id);
         $user = User::find($request->user_id);
