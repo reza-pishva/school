@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -56,30 +57,7 @@ class User extends Authenticatable
     }
 
 
-    public function users(){
-        $user=User::all();
-        return $user;
-    }
-    public function user_class($user_id,$year){
-        $user=User::find($user_id);
-        return $user->classes->where('year',$year);
-    }
-    public function user_profile($id){
-        $user=User::find($id);
-        return $user->profile;
-    }
-    public function user_classes($user_id){
-        $user=User::find($user_id);
-        return $user->classes;
-    }
-    public function students(){
-        $user=User::role(1)->get();
-        return $user;
-    }
-    public function teachers(){
-        $user=User::role(2)->get();
-        return $user;
-    }
+
 
 
 
