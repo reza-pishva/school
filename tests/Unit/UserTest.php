@@ -57,4 +57,34 @@ class UserTest extends TestCase
         $response = $this->get('/api/school/user-profile/16');
         $response->assertStatus(200);
     }
+    public function test_get_users_men()
+    {
+        $response = $this->get('/api/school/user/men');
+        $response->assertStatus(200);
+    }
+    public function test_get_users_women()
+    {
+        $response = $this->get('/api/school/user/women');
+        $response->assertStatus(200);
+    }
+    public function test_remove_user()
+    {
+        $response = $this->delete('/api/school/user/remove/32');
+        $response->assertStatus(200);
+    }
+    public function test_get_users_students()
+    {
+        $response = $this->get('/api/school/user/students');
+        $response->assertStatus(200);
+    }
+    public function test_get_users_teacher()
+    {
+        $response = $this->get('/api/school/user/teachers');
+        $response->assertStatus(200);
+    }
+    public function test_get_users_personel()
+    {
+        $response = $this->get('/api/school/user/personels');
+        $response->assertStatus(200);
+    }
 }

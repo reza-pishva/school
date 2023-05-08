@@ -50,7 +50,7 @@ Route::get('/school/user/men',[UserController::class,'men']);
 Route::get('/school/user/women',[UserController::class,'women']);
 Route::get('/school/user-profile/{id}',[UserController::class,'user_profile']);
 Route::get('/school/user/{id}',[UserController::class,'user']);
-Route::get('/school/user/remove/{id}',[UserController::class,'remove']);
+Route::delete('/school/user/remove/{id}',[UserController::class,'remove']);
 Route::put('/school/user/update/{id}',[UserController::class,'update']);
 Route::post('/school/user/store',[UserController::class,'store']);
 Route::post('/school/user/add-user',[UserController::class,'add_user_class']);
