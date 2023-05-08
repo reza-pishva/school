@@ -61,7 +61,7 @@ Route::get('/school/user/user-lessons-current-year/{id}',[UserController::class,
 
 Route::get('/school/lesson/lessons/{grade_id}',[LessonController::class,'lessons']);
 Route::get('/school/lesson/{id}',[LessonController::class,'lesson']);
-Route::get('/school/lesson/remove/{id}',[LessonController::class,'remove']);
+Route::delete('/school/lesson/remove/{id}',[LessonController::class,'remove']);
 Route::put('/school/lesson/update/{id}',[LessonController::class,'update']);
 Route::post('/school/lesson/store',[LessonController::class,'store']);
 
