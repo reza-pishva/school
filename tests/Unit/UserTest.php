@@ -1,20 +1,33 @@
 <?php
-
-namespace Tests\Unit;
-
-use PHPUnit\Framework\TestCase;
-use App\models\User;
-
+ 
+ namespace Tests\Feature;
+ 
+ use Illuminate\Foundation\Testing\RefreshDatabase;
+ use Illuminate\Foundation\Testing\WithoutMiddleware;
+ use Illuminate\Http\UploadedFile;
+ use Illuminate\Support\Facades\Storage;
+ use Tests\TestCase;
+ 
 class UserTest extends TestCase
 {
     /**
      * A basic test example.
-     *
-     * @return void
      */
-    public function testUserHasName()
+
+    public function test_store_user()
     {
-        $user = new User();
-        $this->assertEquals();
+        $data = [
+            'f_name'=>'1',
+            'l_name'=>'2',
+            'father_name'=>'3',
+            'national_code'=>'4',
+            'gender'=>'1',
+            'role'=>'1',
+            'email'=>'rpishva777@gmail.com',
+            'password'=>'1111111',
+        ];
+        $response = $this->post('http://127.0.0.1:8000/api/school/user/store', $data);
+        $response->assertStatus(200);
+        $this->assertDatabaseHas('users', $data);
     }
 }
