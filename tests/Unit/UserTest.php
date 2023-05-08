@@ -23,10 +23,10 @@ class UserTest extends TestCase
             'national_code'=>'4',
             'gender'=>'1',
             'role'=>'1',
-            'email'=>'rpishva777@gmail.com',
+            'email'=>'rpishva888@gmail.com',
             'password'=>'1111111',
         ];
-        $response = $this->post('http://127.0.0.1:8000/api/school/user/store', $data);
+        $response = $this->post('/api/school/user/store', $data);
         $response->assertStatus(200);
         $this->assertDatabaseHas('users', $data);
     }
