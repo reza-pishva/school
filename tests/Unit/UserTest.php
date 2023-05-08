@@ -4,8 +4,9 @@
  
  use Illuminate\Foundation\Testing\RefreshDatabase;
  use Illuminate\Foundation\Testing\WithoutMiddleware;
- use Illuminate\Http\UploadedFile;
- use Illuminate\Support\Facades\Storage;
+ use Illuminate\Foundation\Testing\DatabaseTransactions;
+//  use Illuminate\Http\UploadedFile;
+//  use Illuminate\Support\Facades\Storage;
  use Tests\TestCase;
  
 class UserTest extends TestCase
@@ -13,6 +14,7 @@ class UserTest extends TestCase
     /**
      * A basic test example.
      */
+    use DatabaseTransactions;
 
     public function test_store_user()
     {
@@ -23,7 +25,7 @@ class UserTest extends TestCase
             'national_code'=>'4',
             'gender'=>'1',
             'role'=>'1',
-            'email'=>'rpishva888@gmail.com',
+            'email'=>'rpishva999@gmail.com',
             'password'=>'1111111',
         ];
         $response = $this->post('/api/school/user/store', $data);
