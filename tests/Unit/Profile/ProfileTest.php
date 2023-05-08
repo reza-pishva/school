@@ -6,11 +6,7 @@
  
 class ProfileTest extends TestCase
 {
-    /**
-     * A basic test example.
-     */
     use DatabaseTransactions;
-
     public function test_store_profile()
     {
         $data = [

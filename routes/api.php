@@ -78,7 +78,7 @@ Route::get('/school/classroom/{id}',[ClassRoomController::class,'classroom']);
 Route::get('/school/classroom/class-lessons/{class_id}/{grade_id}',[ClassRoomController::class,'class_lessons']);
 Route::get('/school/classroom/class-students/{id}',[ClassRoomController::class,'class_students']);
 Route::get('/school/classroom/class-teachers/{id}',[ClassRoomController::class,'class_teachers']);
-Route::get('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
+Route::delete('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
 Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']);
 Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
 
