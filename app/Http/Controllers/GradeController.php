@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Grade;
 use App\Models\ClassRoom;
 use App\Models\Lesson;
+use App\Http\Requests\GradeRequest;
+
 
 class GradeController extends Controller
 {
@@ -20,12 +22,12 @@ class GradeController extends Controller
     public function remove($id){
         $result = Grade::find($id)->delete();     
     }
-    public function update(Request $request , $id){
+    public function update(GradeRequest $request , $id){
         $grade = Grade::find($id);
         $grade->update(['grade_name'=>$request->grade_name]);
         return $grade;  
     }
-    public function store(Request $request){
+    public function store(GradeRequest $request){
         Grade::create(['grade_name' => $request->grade_name]); 
         return $request->all();
     }
