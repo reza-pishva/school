@@ -13,7 +13,7 @@ class ExamRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class ExamRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'lesson_id' => 'required|numeric',
+            'exam_type_id' => 'required|numeric',
+            'grade_id' => 'required|numeric',
         ];
     }
 }
