@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lesson;
+use App\Http\Requests\LessonRequest;
 
 class LessonController extends Controller
 {
@@ -20,14 +21,14 @@ class LessonController extends Controller
         $result = Lesson::find($id)->delete();     
     }
 
-    public function update(Request $request , $id){
+    public function update(LessonRequest $request , $id){
         $lesson = Lesson::find($id);
         $lesson->update(['lesson_name' => $request->lesson_name,
                          'grade_id' => $request->grade_id]);
         return $lesson;  
     }
     
-    public function store(Request $request){
+    public function store(LessonRequest $request){
         Lesson::create(['lesson_name' => $request->lesson_name,
                         'grade_id' => $request->grade_id]); 
         return $request->all();
