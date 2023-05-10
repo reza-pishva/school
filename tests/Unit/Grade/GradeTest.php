@@ -3,6 +3,8 @@
  namespace Tests\Feature;
  use Illuminate\Foundation\Testing\DatabaseTransactions;
  use Tests\TestCase;
+ use App\databeses\factories\GradeFactory;
+ use App\Models\Grade;
  
 class GradeTest extends TestCase
 {
@@ -11,7 +13,7 @@ class GradeTest extends TestCase
     public function test_store_grade()
     {
         $data = [
-            'grade_name'=>'test111111',            
+            'grade_name'=>'test',            
         ];
         $response = $this->post('/api/school/grade/store', $data);
         $response->assertStatus(200);
@@ -20,9 +22,10 @@ class GradeTest extends TestCase
     public function test_update_grade()
     {
         $data = [
-            'grade_name'=>'test',            
+            'grade_name'=>'test2',            
         ];
-        $response = $this->put('/api/school/grade/update/2', $data);
+        $response = Grade::factory()->create();
+        $response = $this->put('/api/school/grade/update/'.$response->id, $data);
         $response->assertStatus(200);
     }
     public function test_get_grade_by_id()

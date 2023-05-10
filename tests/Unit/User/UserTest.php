@@ -12,13 +12,13 @@ class UserTest extends TestCase
     public function test_store_user()
     {
         $data = [
-            'f_name'=>'1',
-            'l_name'=>'2',
-            'father_name'=>'3',
-            'national_code'=>'4',
+            'f_name'=>'test',
+            'l_name'=>'test',
+            'father_name'=>'test',
+            'national_code'=>'1111111111',
             'gender'=>'1',
             'role'=>'1',
-            'email'=>'rpishva999@gmail.com',
+            'email'=>'test@gmail.com',
             'password'=>'1111111',
         ];
         $response = $this->post('/api/school/user/store', $data);
