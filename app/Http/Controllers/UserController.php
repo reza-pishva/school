@@ -5,6 +5,7 @@ use App\Models\ClassRoom;
 use App\Models\User;
 use App\Models\Lesson;
 use App\Models\Profile;
+use App\Http\Requests\UserRequest;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -76,7 +77,7 @@ class UserController extends Controller
     public function remove($id){
         $result = User::find($id)->delete();     
     }
-    public function update(Request $request , $id){
+    public function update(UserRequest $request , $id){
         $user = User::find($id);
         $user->update(['f_name' => $request->f_name,
                        'l_name' => $request->l_name,
@@ -88,7 +89,7 @@ class UserController extends Controller
                        'password' => $request->password]);
         return $user;  
     }
-    public function store(Request $request){
+    public function store(UserRequest $request){
         User::create(['f_name' => $request->f_name,
                       'l_name' => $request->l_name,
                       'father_name' => $request->father_name,
