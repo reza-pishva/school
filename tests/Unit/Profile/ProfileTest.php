@@ -3,6 +3,8 @@
  namespace Tests\Feature;
  use Illuminate\Foundation\Testing\DatabaseTransactions;
  use Tests\TestCase;
+ use App\databeses\factories\ProfileFactory;
+ use App\Models\Profile;
  
 class ProfileTest extends TestCase
 {
@@ -37,7 +39,8 @@ class ProfileTest extends TestCase
             'major'=>'test',
             'user_id'=>38,
         ];
-        $response = $this->put('/api/school/profile/update/5', $data);
+        $response = Profile::factory()->create();
+        $response = $this->put('/api/school/profile/update/'.$response->id, $data);
         $response->assertStatus(200);
     }
     public function test_get_profile_by_id()
