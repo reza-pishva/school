@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
 
-class GradeRequest extends FormRequest
+class ExamTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +23,7 @@ class GradeRequest extends FormRequest
     public function rules()
     {
         return [
-            'grade_name' => 'required|max:50',
+            'exam_type' => 'required|max:100',
         ];
     }
 }
