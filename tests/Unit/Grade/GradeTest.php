@@ -11,7 +11,7 @@ class GradeTest extends TestCase
     public function test_store_grade()
     {
         $data = [
-            'grade_name'=>'test',            
+            'grade_name'=>'test111111',            
         ];
         $response = $this->post('/api/school/grade/store', $data);
         $response->assertStatus(200);

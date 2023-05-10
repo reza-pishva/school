@@ -25,7 +25,7 @@ class GradeRequest extends FormRequest
     public function rules()
     {
         return [
-            'grade_name' => 'required|max:100',
+            'grade_name' => 'required|max:50',
         ];
     }
 }
