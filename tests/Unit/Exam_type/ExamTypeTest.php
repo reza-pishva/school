@@ -8,7 +8,6 @@
 class ExamTypeTest extends TestCase
 {
     use DatabaseTransactions;
-
     public function test_store_exam_type()
     {
         $data = [

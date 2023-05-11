@@ -3,6 +3,7 @@
  namespace Tests\Feature;
  use Illuminate\Foundation\Testing\DatabaseTransactions;
  use Tests\TestCase;
+ use App\Models\ClassRoom;
  
 class ClassroomTest extends TestCase
 {
@@ -26,12 +27,14 @@ class ClassroomTest extends TestCase
             'name'=>'test',
             'grade_id'=>'2',        
         ];
-        $response = $this->put('/api/school/classroom/update/3', $data);
+        $response = ClassRoom::factory()->create();
+        $response = $this->put('/api/school/classroom/update/'.$response->id, $data);
         $response->assertStatus(200);
     }
     public function test_get_class_by_id()
     {
-        $response = $this->get('/api/school/classroom/3');
+        $response = ClassRoom::factory()->create();
+        $response = $this->get('/api/school/classroom/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_classes()
@@ -56,7 +59,8 @@ class ClassroomTest extends TestCase
     }
     public function test_remove_class()
     {
-        $response = $this->delete('/api/school/classroom/remove/3');
+        $response = ClassRoom::factory()->create();
+        $response = $this->delete('/api/school/classroom/remove/'.$response->id);
         $response->assertStatus(200);
     }
 
