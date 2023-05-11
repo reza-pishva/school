@@ -3,6 +3,7 @@
  namespace Tests\Feature;
  use Illuminate\Foundation\Testing\DatabaseTransactions;
  use Tests\TestCase;
+ use App\Models\ExamType;
  
 class ExamTypeTest extends TestCase
 {
@@ -22,12 +23,14 @@ class ExamTypeTest extends TestCase
         $data = [
             'exam_type'=>'test',    
         ];
-        $response = $this->put('/api/school/exam/exam-type/update/3', $data);
+        $response = ExamType::factory()->create();
+        $response = $this->put('/api/school/exam/exam-type/update/'.$response->id, $data);
         $response->assertStatus(200);
     }
     public function test_get_exam_type_by_id()
     {
-        $response = $this->get('/api/school/exam/exam-type/3');
+        $response = ExamType::factory()->create();
+        $response = $this->get('/api/school/exam/exam-type/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_exams_type()
@@ -37,7 +40,8 @@ class ExamTypeTest extends TestCase
     }
     public function test_remove_exam_type()
     {
-        $response = $this->delete('/api/school/exam/exam-type/remove/3');
+        $response = ExamType::factory()->create();
+        $response = $this->delete('/api/school/exam/exam-type/remove/'.$response->id);
         $response->assertStatus(200);
     }
 

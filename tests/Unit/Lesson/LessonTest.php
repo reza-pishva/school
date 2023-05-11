@@ -31,7 +31,8 @@ class LessonTest extends TestCase
     }
     public function test_get_lesson_by_id()
     {
-        $response = $this->get('/api/school/lesson/1');
+        $response = Lesson::factory()->create();
+        $response = $this->get('/api/school/lesson/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_lessons_by_gradeid()
@@ -41,7 +42,8 @@ class LessonTest extends TestCase
     }
     public function test_remove_lesson()
     {
-        $response = $this->delete('/api/school/lesson/remove/1');
+        $response = Lesson::factory()->create();
+        $response = $this->delete('/api/school/lesson/remove/'.$response->id);
         $response->assertStatus(200);
     }
 
