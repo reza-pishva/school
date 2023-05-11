@@ -30,7 +30,8 @@ class GradeTest extends TestCase
     }
     public function test_get_grade_by_id()
     {
-        $response = $this->get('/api/school/grade/2');
+        $response = Grade::factory()->create();
+        $response = $this->get('/api/school/grade/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_grades()
@@ -40,7 +41,9 @@ class GradeTest extends TestCase
     }
     public function test_remove_grade()
     {
-        $response = $this->delete('/api/school/grade/remove/2');
+        $response = Grade::factory()->create();
+        $response = $this->delete('/api/school/grade/remove/'.$response->id);
+
         $response->assertStatus(200);
     }
 
