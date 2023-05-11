@@ -45,7 +45,8 @@ class ProfileTest extends TestCase
     }
     public function test_get_profile_by_id()
     {
-        $response = $this->get('/api/school/profile/5');
+        $response = Profile::factory()->create();
+        $response = $this->get('/api/school/profile/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_profiles()
@@ -55,7 +56,8 @@ class ProfileTest extends TestCase
     }
     public function test_remove_profile()
     {
-        $response = $this->delete('/api/school/profile/remove/5');
+        $response = Profile::factory()->create();
+        $response = $this->delete('/api/school/profile/remove/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_user_profile()

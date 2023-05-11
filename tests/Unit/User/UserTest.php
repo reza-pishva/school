@@ -44,7 +44,8 @@ class UserTest extends TestCase
     }
     public function test_get_user_by_id()
     {
-        $response = $this->get('/api/school/user/16');
+        $response = User::factory()->create();
+        $response = $this->get('/api/school/user/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_users()
@@ -69,7 +70,8 @@ class UserTest extends TestCase
     }
     public function test_remove_user()
     {
-        $response = $this->delete('/api/school/user/remove/32');
+        $response = User::factory()->create();
+        $response = $this->delete('/api/school/user/remove/'.$response->id);
         $response->assertStatus(200);
     }
     public function test_get_users_students()
