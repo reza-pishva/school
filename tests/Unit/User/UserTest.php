@@ -3,6 +3,7 @@
  namespace Tests\Feature;
  use Illuminate\Foundation\Testing\DatabaseTransactions;
  use Tests\TestCase;
+ use App\Models\User;
  
 class UserTest extends TestCase
 {
@@ -37,7 +38,8 @@ class UserTest extends TestCase
             'email'=>'rpishva999@gmail.com',
             'password'=>'1111111',
         ];
-        $response = $this->put('/api/school/user/update/16', $data);
+        $response = User::factory()->create();
+        $response = $this->put('/api/school/user/update/'.$response->id, $data);
         $response->assertStatus(200);
     }
     public function test_get_user_by_id()
