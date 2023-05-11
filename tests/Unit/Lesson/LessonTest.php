@@ -3,6 +3,7 @@
  namespace Tests\Feature;
  use Illuminate\Foundation\Testing\DatabaseTransactions;
  use Tests\TestCase;
+ use App\Models\Lesson;
  
 class LessonTest extends TestCase
 {
@@ -24,7 +25,8 @@ class LessonTest extends TestCase
             'lesson_name'=>'test', 
             'grade_id'=>2,   
         ];
-        $response = $this->put('/api/school/lesson/update/1', $data);
+        $response = Lesson::factory()->create();
+        $response = $this->put('/api/school/lesson/update/'.$response->id, $data);
         $response->assertStatus(200);
     }
     public function test_get_lesson_by_id()
