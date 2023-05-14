@@ -13,7 +13,7 @@ use App\Http\Controllers\TeacherLessonController;
 use App\Http\Controllers\TeacherClassController;
 use App\Http\Controllers\StudentClassController;
 use App\Http\Controllers\ClassProgramController;
-use App\Http\Controllers\ExamStudentController;
+use App\Http\Controllers\ExamUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,9 +107,8 @@ Route::get('/school/class-program/remove/{id}',[ClassProgramController::class,'r
 Route::put('/school/class-program/update/{id}',[ClassProgramController::class,'update']);
 Route::post('/school/class-program/store',[ClassProgramController::class,'store']);
 
-Route::get('/school/exam-student/exams',[ExamStudentController::class,'exams']);
-Route::get('/school/exam-student/current-exams',[ExamStudentController::class,'currentExams']);
-Route::get('/school/exam-student/exam/{id}',[ExamStudentController::class,'exam']);
-Route::get('/school/exam-student/remove/{id}',[ExamStudentController::class,'remove']);
-Route::put('/school/exam-student/update/{id}',[ExamStudentController::class,'update']);
-Route::post('/school/exam-student/store',[ExamStudentController::class,'store']);
+Route::get('/school/exam-user/exams',[ExamUserController::class,'exams']);
+Route::get('/school/exam-user/user/{id}',[ExamUserController::class,'exam']);
+Route::delete('/school/exam-user/remove/{id}',[ExamUserController::class,'remove']);
+Route::put('/school/exam-user/update/{id}',[ExamUserController::class,'update']);
+Route::post('/school/user-exam/store',[ExamUserController::class,'store']);
