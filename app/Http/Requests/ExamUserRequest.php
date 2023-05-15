@@ -13,7 +13,7 @@ class ExamUserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,8 +26,8 @@ class ExamUserRequest extends FormRequest
         return [
             'score' => 'required|numeric|max:20|min:0',
             'date_shamsi' => 'required|max:15000101',
-            'user_id' => 'required|numeric',
-            'exam_id' => 'required|numeric',
+            'user_id' => 'required',
+            'exam_id' => 'required',
         ];
     }
 }
