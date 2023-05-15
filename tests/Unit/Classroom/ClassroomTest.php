@@ -14,7 +14,7 @@ class ClassroomTest extends TestCase
         $data = [
             'year'=>'1402',  
             'name'=>'test',
-            'grade_id'=>'2',        
+            'grade_id'=>'1',        
         ];
         $response = $this->post('/api/school/classroom/store', $data);
         $response->assertStatus(201);
@@ -25,7 +25,7 @@ class ClassroomTest extends TestCase
         $data = [
             'year'=>'1402',  
             'name'=>'test',
-            'grade_id'=>'2',        
+            'grade_id'=>'1',        
         ];
         $response = ClassRoom::factory()->create();
         $response = $this->put('/api/school/classroom/update/'.$response->id, $data);
@@ -49,12 +49,12 @@ class ClassroomTest extends TestCase
     }
     public function test_get_class_students()
     {
-        $response = $this->get('/api/school/classroom/class-students/3');
+        $response = $this->get('/api/school/classroom/class-students/1');
         $response->assertStatus(200);
     }
     public function test_get_class_teachers()
     {
-        $response = $this->get('/api/school/classroom/class-teachers/3');
+        $response = $this->get('/api/school/classroom/class-teachers/1');
         $response->assertStatus(200);
     }
     public function test_remove_class()

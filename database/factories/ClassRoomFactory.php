@@ -16,7 +16,7 @@ class ClassRoomFactory extends Factory
         return [
             'year' => 1402,
             'name' => $this->faker->name(),
-            'grade_id' => 2,
+            'grade_id' => 1,
         ];
     }
 }

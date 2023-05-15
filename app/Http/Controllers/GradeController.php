@@ -31,13 +31,4 @@ class GradeController extends Controller
         Grade::create(['grade_name' => $request->grade_name]); 
         return $request->all();
     }
-    // public function lesson($id,$id_lesson){
-    //     dd(Grade::find($id)->lessons[$id_lesson]['lesson_name']);
-    // }
-    // public function classes($id){
-    //     dd(Grade::find($id)->classes);
-    // }
-    // public function class_name($id,$id_class){
-    //     dd(Grade::find($id)->lessons[$id_class]['lesson_name']);
-    // }
 }

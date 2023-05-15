@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ClassRoom;
 use App\Models\User;
+use App\Http\Requests\ClassRoomRequest;
 
 class ClassRoomController extends Controller
 {
@@ -46,14 +47,14 @@ class ClassRoomController extends Controller
     public function remove($id){
         $result = ClassRoom::find($id)->delete();     
     }
-    public function update(Request $request , $id){
+    public function update(ClassRoomRequest $request , $id){
         $classroom = ClassRoom::find($id);
         $classroom->update(['year' => $request->year,
                           'name' => $request->name, 
                           'grade_id' => $request->grade_id]);
         return $classroom;  
     }
-    public function store(Request $request){
+    public function store(ClassRoomRequest $request){
         $classroom = ClassRoom::create(['year' => $request->year,
                           'name' => $request->name, 
                           'grade_id' => $request->grade_id]);
