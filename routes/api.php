@@ -32,13 +32,13 @@ Route::get('/school/grade/{id}',[GradeController::class,'grade']);
 Route::delete('/school/grade/remove/{id}',[GradeController::class,'remove']);
 Route::put('/school/grade/update/{id}',[GradeController::class,'update']);
 Route::post('/school/grade/store',[GradeController::class,'store']);
-
+/* Exam type table routes */
 Route::get('/school/exam/exam-types',[ExamTypeController::class,'examTypes']);
 Route::get('/school/exam/exam-type/{id}',[ExamTypeController::class,'examType']);
 Route::delete('/school/exam/exam-type/remove/{id}',[ExamTypeController::class,'remove']);
 Route::put('/school/exam/exam-type/update/{id}',[ExamTypeController::class,'update']);
 Route::post('/school/exam/exam-type/store',[ExamTypeController::class,'store']);
-
+/* user table routes */
 Route::get('/school/user/users',[UserController::class,'users']);
 Route::get('/school/user/students',[UserController::class,'students']);
 Route::get('/school/user/teachers',[UserController::class,'teachers']);
