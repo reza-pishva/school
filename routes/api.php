@@ -64,7 +64,7 @@ Route::get('/school/lesson/{id}',[LessonController::class,'lesson']);
 Route::delete('/school/lesson/remove/{id}',[LessonController::class,'remove']);
 Route::put('/school/lesson/update/{id}',[LessonController::class,'update']);
 Route::post('/school/lesson/store',[LessonController::class,'store']);
-
+/* profile table routes */
 Route::get('/school/profile/profiles',[ProfileController::class,'profiles']);
 Route::get('/school/profile/{id}',[ProfileController::class,'profile']);
 Route::get('/school/profile-user/{id}',[ProfileController::class,'profile_user']);
