@@ -71,7 +71,7 @@ Route::get('/school/profile-user/{id}',[ProfileController::class,'profile_user']
 Route::delete('/school/profile/remove/{id}',[ProfileController::class,'remove']);
 Route::put('/school/profile/update/{id}',[ProfileController::class,'update']);
 Route::post('/school/profile/store',[ProfileController::class,'store']);
-
+/* classroom table routes */
 Route::get('/school/classroom/classrooms',[ClassRoomController::class,'classrooms']);
 Route::get('/school/classroom/current-classrooms',[ClassRoomController::class,'currentClassRooms']);
 Route::get('/school/classroom/{id}',[ClassRoomController::class,'classroom']);
