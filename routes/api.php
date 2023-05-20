@@ -100,7 +100,7 @@ Route::get('/school/teacher-class/{id}',[TeacherClassController::class,'teacher_
 Route::get('/school/teacher-class/remove/{id}',[TeacherClassController::class,'remove']);
 Route::put('/school/teacher-class/update/{id}',[TeacherClassController::class,'update']);
 Route::post('/school/teacher-class/store',[TeacherClassController::class,'store']);
-
+/* class-program table routes */
 Route::get('/school/class-program/programs',[ClassProgramController::class,'programs']);
 Route::get('/school/class-program/program/{id}',[ClassProgramController::class,'program']);
 Route::get('/school/class-program/remove/{id}',[ClassProgramController::class,'remove']);
