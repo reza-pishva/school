@@ -94,7 +94,7 @@ Route::get('/school/teacher-lesson/{id}',[TeacherLessonController::class,'lesson
 Route::get('/school/teacher-lesson/remove/{id}',[TeacherLessonController::class,'remove']);
 Route::put('/school/teacher-lesson/update/{id}',[TeacherLessonController::class,'update']);
 Route::post('/school/teacher-lesson/store',[TeacherLessonController::class,'store']);
-
+/* teacher-class table routes */
 Route::get('/school/teacher-class/teacher-classes',[TeacherClassController::class,'teacher_classes']);
 Route::get('/school/teacher-class/{id}',[TeacherClassController::class,'teacher_class']);
 Route::get('/school/teacher-class/remove/{id}',[TeacherClassController::class,'remove']);
