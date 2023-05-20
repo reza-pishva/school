@@ -87,7 +87,7 @@ Route::get('/school/exam/{id}',[ExamNameController::class,'exam']);
 Route::delete('/school/exam/remove/{id}',[ExamNameController::class,'remove']);
 Route::put('/school/exam/update/{id}',[ExamNameController::class,'update']);
 Route::post('/school/exam/store',[ExamNameController::class,'store']);
-
+/* lessons table routes */
 Route::get('/school/teacher-lesson/lessons',[TeacherLessonController::class,'lessons']);
 Route::get('/school/teacher-lesson/current-lessons',[TeacherLessonController::class,'currentLessons']);
 Route::get('/school/teacher-lesson/{id}',[TeacherLessonController::class,'lesson']);
