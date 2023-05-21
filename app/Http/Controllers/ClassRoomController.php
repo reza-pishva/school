@@ -9,6 +9,7 @@ use App\Http\Requests\ClassRoomRequest;
 
 class ClassRoomController extends Controller
 {
+    //in this function we will compute the current year of school
     public function getYear(){
         $date = \Morilog\Jalali\Jalalian::now();
         $year = substr($date,0,4); 
