@@ -20,6 +20,7 @@ class ClassRoomController extends Controller
         }
         return $year; 
     }
+    //here we get all the classrooms which are registered for all grades.
     public function classrooms(){
         $classroom = ClassRoom::all();
         return $classroom;     
