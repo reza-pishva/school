@@ -25,6 +25,7 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::all();
         return $classroom;     
     }
+    //here we get teachers of a specific class.
     public function class_teachers($id){
         $classroom = ClassRoom::find($id);
         return $classroom->users->where('role',2);   
