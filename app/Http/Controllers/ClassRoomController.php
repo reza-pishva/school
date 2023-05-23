@@ -30,6 +30,7 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::find($id);
         return $classroom->users->where('role',2);   
     }
+    //here we get students of a specific class.
     public function class_students($id){
         $classroom = ClassRoom::find($id);
         return $classroom->users->where('role',1);     
