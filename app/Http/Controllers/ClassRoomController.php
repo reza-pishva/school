@@ -35,6 +35,7 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::find($id);
         return $classroom->users->where('role',1);     
     }
+    //here we get classrooms of current year.
     public function currentClassRooms(){
         $year=$this->getYear();
         $classroom = ClassRoom::year($year)->get();
