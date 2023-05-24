@@ -41,6 +41,7 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::year($year)->get();
         return $classroom;        
     }
+    // to select a classroom by id
     public function classroom($id){
         $classroom = ClassRoom::find($id);
         return $classroom;
