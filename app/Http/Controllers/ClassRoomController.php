@@ -46,6 +46,7 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::find($id);
         return $classroom;
     }
+    // to get the lessons of a class
     public function class_lessons($class_id , $grade_id){
         $classroom = ClassRoom::find($class_id);
         return $classroom->lessons->where('grade_id' , $grade_id);
