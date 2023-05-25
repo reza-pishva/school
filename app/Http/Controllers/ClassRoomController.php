@@ -51,6 +51,7 @@ class ClassRoomController extends Controller
         $classroom = ClassRoom::find($class_id);
         return $classroom->lessons->where('grade_id' , $grade_id);
     }
+    // to remove one specific classroom by its id
     public function remove($id){
         $result = ClassRoom::find($id)->delete();     
     }
