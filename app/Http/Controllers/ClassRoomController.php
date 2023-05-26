@@ -55,6 +55,7 @@ class ClassRoomController extends Controller
     public function remove($id){
         $result = ClassRoom::find($id)->delete();     
     }
+    // to update one specific classroom by its id
     public function update(ClassRoomRequest $request , $id){
         $classroom = ClassRoom::find($id);
         $classroom->update(['year' => $request->year,
