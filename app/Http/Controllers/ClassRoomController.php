@@ -63,6 +63,7 @@ class ClassRoomController extends Controller
                           'grade_id' => $request->grade_id]);
         return $classroom;  
     }
+    // to add one classroom
     public function store(ClassRoomRequest $request){
         $classroom = ClassRoom::create(['year' => $request->year,
                           'name' => $request->name, 
