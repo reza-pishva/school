@@ -12,6 +12,7 @@ class ExamNameController extends Controller
         $exams = Exam::all();
         return $exams;
     }
+    //to get an exam by id
     public function exam($id){
         $exams = Exam::find($id);
         return Exam::find($id);
