@@ -7,6 +7,7 @@ use App\Http\Requests\ExamRequest;
 
 class ExamNameController extends Controller
 {
+    //to return all defined exam
     public function exams(){
         $exams = Exam::all();
         return $exams;
