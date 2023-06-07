@@ -60,6 +60,7 @@ Route::get('/school/user/user-lessons/{id}/{year}',[UserController::class,'user_
 Route::get('/school/user/user-lessons-current-year/{id}',[UserController::class,'user_lessons_current_year']);
 /* lesson table routes */
 Route::get('/school/lesson/lessons/{grade_id}',[LessonController::class,'lessons']);
+Route::get('/school/lesson/lessons-view',[LessonController::class,'lessons_view']);
 Route::get('/school/lesson/{id}',[LessonController::class,'lesson']);
 Route::delete('/school/lesson/remove/{id}',[LessonController::class,'remove']);
 Route::put('/school/lesson/update/{id}',[LessonController::class,'update']);
@@ -73,6 +74,7 @@ Route::put('/school/profile/update/{id}',[ProfileController::class,'update']);
 Route::post('/school/profile/store',[ProfileController::class,'store']);
 /* classroom table routes */
 Route::get('/school/classroom/classrooms',[ClassRoomController::class,'classrooms']);
+Route::get('/school/classroom/classrooms-view',[ClassRoomController::class,'classrooms_view']);
 Route::get('/school/classroom/current-classrooms',[ClassRoomController::class,'currentClassRooms']);
 Route::get('/school/classroom/{id}',[ClassRoomController::class,'classroom']);
 Route::get('/school/classroom/class-lessons/{class_id}/{grade_id}',[ClassRoomController::class,'class_lessons']);

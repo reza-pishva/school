@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ClassRoom;
 use App\Models\User;
 use App\Http\Requests\ClassRoomRequest;
+use Illuminate\Support\Facades\DB;
 
 class ClassRoomController extends Controller
 {
@@ -23,6 +24,10 @@ class ClassRoomController extends Controller
     //here we get all the classrooms which are registered for all grades.
     public function classrooms(){
         $classroom = ClassRoom::all();
+        return $classroom;     
+    }
+    public function classrooms_view(){
+        $classroom = DB::table('class_grade_view')->orderByDesc('id')->get();
         return $classroom;     
     }
     //here we get teachers of a specific class.

@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lesson;
 use App\Http\Requests\LessonRequest;
+use Illuminate\Support\Facades\DB;
 
 class LessonController extends Controller
 {
     public function lesson($id){
         $lesson = Lesson::find($id);
         return $lesson;
+    }
+    public function lessons_view(){
+        $lesson = DB::table('lesson_grade_view')->orderByDesc('id')->get();
+        return $lesson;     
     }
 
     public function lessons($grade_id){

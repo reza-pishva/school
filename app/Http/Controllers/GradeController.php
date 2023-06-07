@@ -12,8 +12,8 @@ use App\Http\Requests\GradeRequest;
 class GradeController extends Controller
 {
     public function grades(){
-        $grade = Grade::all();
-        return Grade::all();
+        $grade = Grade::orderByDesc('id')->get();
+        return $grade;
     }
     public function grade($id){
         $grade = Grade::find($id);
