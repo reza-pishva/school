@@ -85,6 +85,7 @@ Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']
 Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
 /* exam table routes */
 Route::get('/school/exam/exam_names',[ExamNameController::class,'exams']);
+Route::get('/school/exam/exam-view',[ExamNameController::class,'exams_view']);
 Route::get('/school/exam/{id}',[ExamNameController::class,'exam']);
 Route::delete('/school/exam/remove/{id}',[ExamNameController::class,'remove']);
 Route::put('/school/exam/update/{id}',[ExamNameController::class,'update']);
@@ -105,7 +106,7 @@ Route::post('/school/teacher-class/store',[TeacherClassController::class,'store'
 /* class-program table routes */
 Route::get('/school/class-program/programs',[ClassProgramController::class,'programs']);
 Route::get('/school/class-program/program/{id}',[ClassProgramController::class,'program']);
-Route::get('/school/class-program/remove/{id}',[ClassProgramController::class,'remove']);
+Route::delete('/school/class-program/remove/{id}',[ClassProgramController::class,'remove']);
 Route::put('/school/class-program/update/{id}',[ClassProgramController::class,'update']);
 Route::post('/school/class-program/store',[ClassProgramController::class,'store']);
 /* exam table routes */

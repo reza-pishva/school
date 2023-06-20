@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 use App\Models\Exam;
 use Illuminate\Http\Request;
 use App\Http\Requests\ExamRequest;
-
+use Illuminate\Support\Facades\DB;
 class ExamNameController extends Controller
 {
     //to return all defined exam
     public function exams(){
         $exams = Exam::all();
+        return $exams;
+    }
+    public function exams_view(){
+        $exams = DB::table('exam_grade_lesson_view')->get();
         return $exams;
     }
     //to get an exam by id
