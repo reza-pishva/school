@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class ClassProgramController extends Controller
 {
     public function programs(){
-        $program = DB::table('prog_view')->get();
+        $program = DB::table('prog_view')->orderByDesc('id')->get();
         return $program;
     }
     public function program($id){
