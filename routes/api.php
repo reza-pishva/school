@@ -41,6 +41,7 @@ Route::post('/school/exam/exam-type/store',[ExamTypeController::class,'store']);
 /* user table routes */
 Route::get('/school/user/users',[UserController::class,'users']);
 Route::get('/school/user/users-view',[UserController::class,'users_view']);
+Route::post('/school/user/users-view-search',[UserController::class,'users_view_search']);
 Route::get('/school/user/students',[UserController::class,'students']);
 Route::get('/school/user/teachers',[UserController::class,'teachers']);
 Route::get('/school/user/personels',[UserController::class,'personels']);

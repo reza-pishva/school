@@ -32,6 +32,29 @@ class UserController extends Controller
         $user=DB::table('user_classes_view5')->get();
         return $user;
     }
+    public function users_view_search(Request $request){
+        $query=DB::table('user_classes_view5');
+        if($request->has('f_name')){
+            $query->where('f_name',$request->input('f_name'));
+        }
+        if($request->has('l_name')){
+            $query->where('l_name',$request->input('l_name'));
+        }
+        if($request->has('grade_id')){
+            $query->where('grade_id',$request->input('grade_id'));
+        }
+        if($request->has('class_id')){
+            $query->where('class_id',$request->input('class_id'));
+        }
+        if($request->has('national_code')){
+            $query->where('national_code',$request->input('national_code'));
+        }
+        if($request->has('year')){
+            $query->where('year',$request->input('year'));
+        }
+        $result = $query->get();
+        return $result;
+    }
     public function user_class($user_id,$year){
         $user=User::find($user_id);
         return $user->classes->where('year',$year);
