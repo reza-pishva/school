@@ -28,6 +28,10 @@ class UserController extends Controller
         $user=User::all();
         return $user;
     }
+    public function users_view(){
+        $user=DB::table('user_classes_view5')->get();
+        return $user;
+    }
     public function user_class($user_id,$year){
         $user=User::find($user_id);
         return $user->classes->where('year',$year);
