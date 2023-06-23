@@ -32,13 +32,63 @@ class UserController extends Controller
         $user=DB::table('user_classes_view5')->get();
         return $user;
     }
+    public function report_query(Request $request)
+    {
+        $f_name=$request->input('f_name');
+        $l_name=$request->input('l_name');
+        $grade_id=$request->input('grade_id');
+        $class_id=$request->input('class_id');
+        $national_code=$request->input('national_code');
+        $year=$request->input('year');
+
+        if($f_name==""){
+            $query1="user_id>0";
+        }else{
+            $query1="f_name LIKE %".$f_name."%";
+        }
+
+        if($l_name==""){
+            $query2="user_id>0";
+        }else{
+            $query2="L_name LIKE %".$L_name."%";
+        }
+
+        if($grade_id==""){
+            $query3="user_id>0";
+        }else{
+            $query3="grade_id=".$grade_id;
+        }
+
+        if($class_id==""){
+            $query4="user_id>0";
+        }else{
+            $query4="class_id=".$class_id;
+        }
+
+        if($national_code==""){
+            $query5="user_id>0";
+        }else{
+            $query5="national_code=".$national_code;
+        }
+
+        if($year==""){
+            $query6="user_id>0";
+        }else{
+            $query6="year=".$year;
+        }
+
+        $query="SELECT * FROM user_classes_view5 WHERE ". $query1 ." AND ".$query2." AND ".$query3." AND ".$query4." AND ".$query5." AND ".$query6." ORDER BY user_id DESC";
+        $requests = DB::select($query);
+        return $requests;
+    }
     public function users_view_search(Request $request){
+        $result = [];
         $query=DB::table('user_classes_view5');
         if($request->has('f_name')){
-            $query->where('f_name',$request->input('f_name'));
+            $query->where('f_name','like','%'.$request->input('f_name').'%');
         }
         if($request->has('l_name')){
-            $query->where('l_name',$request->input('l_name'));
+            $query->where('l_name','like','%'.$request->input('l_name').'%');
         }
         if($request->has('grade_id')){
             $query->where('grade_id',$request->input('grade_id'));
@@ -47,13 +97,22 @@ class UserController extends Controller
             $query->where('class_id',$request->input('class_id'));
         }
         if($request->has('national_code')){
-            $query->where('national_code',$request->input('national_code'));
+            $query->where('national_code','like','%'.$request->input('national_code').'%');
         }
         if($request->has('year')){
-            $query->where('year',$request->input('year'));
+            $query->where('year','like','%'.$request->input('year').'%');
         }
         $result = $query->get();
-        return $result;
+        if($request->input('f_name')=="" and 
+           $request->input('l_name')=="" and 
+           $request->input('national_code')=="" and 
+           $request->input('year')=="" and 
+           $request->input('class_id')=="" and 
+           $request->input('grade_id')==""){
+            return DB::table('user_classes_view5')->get();
+           }else{
+            return $query->get();
+           }
     }
     public function user_class($user_id,$year){
         $user=User::find($user_id);
