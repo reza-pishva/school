@@ -44,13 +44,13 @@ class UserController extends Controller
         if($f_name==""){
             $query1="user_id>0";
         }else{
-            $query1="f_name LIKE %".$f_name."%";
+            $query1="f_name LIKE '%".$f_name."%'";
         }
 
         if($l_name==""){
             $query2="user_id>0";
         }else{
-            $query2="L_name LIKE %".$L_name."%";
+            $query2="l_name LIKE '%".$l_name."%'";
         }
 
         if($grade_id==""){
