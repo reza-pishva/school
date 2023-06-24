@@ -5,6 +5,7 @@ use App\Models\ClassRoom;
 use App\Models\User;
 use App\Models\Lesson;
 use App\Models\Profile;
+use App\Models\UserToClass;
 use App\Http\Requests\UserRequest;
 
 use Illuminate\Http\Request;
@@ -201,9 +202,14 @@ class UserController extends Controller
     }
 
     public function addClass(Request $request){
-        // $users = $request.data.userSelected;
-        // $classId = $request.data.classId;
-        return $request->classId;     
+        $users = $request->data[0];
+        foreach($users as $user){
+            $result=DB::table('user_to_classes')->insert([
+                ['user_id' => $user, 'class_id' => $request->data[1]],
+            ]);
+        }
+        
+        return 1;
     }
 
 
