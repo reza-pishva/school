@@ -78,7 +78,7 @@ class UserController extends Controller
             $query6="year=".$year;
         }
 
-        $query="SELECT * FROM user_classes_view5 WHERE ". $query1 ." AND ".$query2." AND ".$query3." AND ".$query4." AND ".$query5." AND ".$query6." ORDER BY user_id DESC";
+        $query="SELECT * FROM user_classes_view5 WHERE ". $query1 ." AND ".$query2." AND ".$query3." AND ".$query4." AND ".$query5." AND ".$query6." ORDER BY user_id ASC";
         $requests = DB::select($query);
         return $requests;
     }
