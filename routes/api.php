@@ -60,6 +60,7 @@ Route::post('/school/user/remove-user',[UserController::class,'remove_user_class
 Route::post('/school/user/add-lesson',[UserController::class,'add_user_lesson']);
 Route::get('/school/user/user-lessons/{id}/{year}',[UserController::class,'user_lessons']);
 Route::get('/school/user/user-lessons-current-year/{id}',[UserController::class,'user_lessons_current_year']);
+Route::post('/school/user/add-class',[UserController::class,'addClass']);
 /* lesson table routes */
 Route::get('/school/lesson/lessons/{grade_id}',[LessonController::class,'lessons']);
 Route::get('/school/lesson/lessons-view',[LessonController::class,'lessons_view']);
@@ -85,6 +86,7 @@ Route::get('/school/classroom/class-teachers/{id}',[ClassRoomController::class,'
 Route::delete('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
 Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']);
 Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
+
 /* exam table routes */
 Route::get('/school/exam/exam_names',[ExamNameController::class,'exams']);
 Route::get('/school/exam/exam-view',[ExamNameController::class,'exams_view']);

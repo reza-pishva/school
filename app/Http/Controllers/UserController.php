@@ -200,6 +200,12 @@ class UserController extends Controller
         return $result;
     }
 
+    public function addClass(Request $request){
+        // $users = $request.data.userSelected;
+        // $classId = $request.data.classId;
+        return $request->classId;     
+    }
+
 
 
    
