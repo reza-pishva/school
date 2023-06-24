@@ -202,13 +202,14 @@ class UserController extends Controller
     }
 
     public function addClass(Request $request){
+
         $users = $request->data[0];
+        UserToClass::whereIn('user_id', $users)->delete(); 
         foreach($users as $user){
             $result=DB::table('user_to_classes')->insert([
                 ['user_id' => $user, 'class_id' => $request->data[1]],
             ]);
         }
-        
         return 1;
     }
 
