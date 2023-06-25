@@ -30,7 +30,7 @@ class UserController extends Controller
         return $user;
     }
     public function users_view(){
-        $user=DB::table('user_classes_view5')->get();
+        $user=DB::table('user_classes_view8')->where('role',1)->get();
         return $user;
     }
     public function report_query(Request $request)
@@ -78,7 +78,7 @@ class UserController extends Controller
             $query6="year=".$year;
         }
 
-        $query="SELECT * FROM user_classes_view5 WHERE ". $query1 ." AND ".$query2." AND ".$query3." AND ".$query4." AND ".$query5." AND ".$query6." ORDER BY user_id ASC";
+        $query="SELECT * FROM user_classes_view8 WHERE role=1 AND ". $query1 ." AND ".$query2." AND ".$query3." AND ".$query4." AND ".$query5." AND ".$query6." ORDER BY user_id ASC";
         $requests = DB::select($query);
         return $requests;
     }

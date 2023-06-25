@@ -90,6 +90,7 @@ Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
 /* exam table routes */
 Route::get('/school/exam/exam_names',[ExamNameController::class,'exams']);
 Route::get('/school/exam/exam-view',[ExamNameController::class,'exams_view']);
+Route::get('/school/exam/exam-view/{id}',[ExamNameController::class,'exams_view_grade_id']);
 Route::get('/school/exam/{id}',[ExamNameController::class,'exam']);
 Route::delete('/school/exam/remove/{id}',[ExamNameController::class,'remove']);
 Route::put('/school/exam/update/{id}',[ExamNameController::class,'update']);

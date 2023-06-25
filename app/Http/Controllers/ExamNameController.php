@@ -16,6 +16,10 @@ class ExamNameController extends Controller
         $exams = DB::table('exam_grade_lesson_view')->get();
         return $exams;
     }
+    public function exams_view_grade_id($id){
+        $exams = DB::table('exam_grade_lesson_view')->where('grade_id',$id)->get();
+        return $exams;
+    }
     //to get an exam by id
     public function exam($id){
         $exams = Exam::find($id);
