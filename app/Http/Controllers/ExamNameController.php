@@ -25,6 +25,12 @@ class ExamNameController extends Controller
         $exams = Exam::find($id);
         return Exam::find($id);
     }
+
+    public function exam_by_grade($id){
+        $exams = DB::table('exams')->where('grade_id',$id)->get();
+        return Exam::find($id);
+    }
+
     public function remove($id){
         $result = Exam::find($id)->delete();     
     }
