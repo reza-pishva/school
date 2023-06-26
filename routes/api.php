@@ -86,7 +86,6 @@ Route::get('/school/classroom/class-teachers/{id}',[ClassRoomController::class,'
 Route::delete('/school/classroom/remove/{id}',[ClassRoomController::class,'remove']);
 Route::put('/school/classroom/update/{id}',[ClassRoomController::class,'update']);
 Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
-
 /* exam table routes */
 Route::get('/school/exam/exam_names',[ExamNameController::class,'exams']);
 Route::get('/school/exam/exam-view',[ExamNameController::class,'exams_view']);
