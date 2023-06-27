@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\Models\ExamUser;
 use Illuminate\Http\Request;
 use App\Http\Requests\ExamUserRequest;
+use Illuminate\Support\Facades\DB;
 
 class ExamUserController extends Controller
 {
@@ -15,7 +16,9 @@ class ExamUserController extends Controller
         return $exams;
     }
     public function exams_view($user_id,$lesson_id,$grade_id){
-        $exams = DB::table('exam_user_lesson_view3')->orderByDesc('id')->get();
+        $exams = DB::table('exam_user_lesson_view3')->where('user_id',$user_id)->
+                                                      where('grade_id',$grade_id)->
+                                                      where('lesson_id',$lesson_id)->get();
         return $exams;
     }
     public function remove($id){
