@@ -116,6 +116,7 @@ Route::put('/school/class-program/update/{id}',[ClassProgramController::class,'u
 Route::post('/school/class-program/store',[ClassProgramController::class,'store']);
 /* exam table routes */
 Route::get('/school/exam-user/exams',[ExamUserController::class,'exams']);
+Route::get('/school/exam-user/exams/{user_id}/{lesson_id}/{grade_id}',[ExamUserController::class,'exams_view']);
 Route::get('/school/exam-user/user/{id}',[ExamUserController::class,'exam']);
 Route::delete('/school/exam-user/remove/{id}',[ExamUserController::class,'remove']);
 Route::put('/school/exam-user/update/{id}',[ExamUserController::class,'update']);

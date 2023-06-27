@@ -14,6 +14,10 @@ class ExamUserController extends Controller
         $exams = ExamUser::find($id);
         return $exams;
     }
+    public function exams_view($user_id,$lesson_id,$grade_id){
+        $exams = DB::table('exam_user_lesson_view3')->orderByDesc('id')->get();
+        return $exams;
+    }
     public function remove($id){
         $result = ExamUser::find($id)->delete();     
     }
