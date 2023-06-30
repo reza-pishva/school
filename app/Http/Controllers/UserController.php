@@ -33,6 +33,10 @@ class UserController extends Controller
         $user=DB::table('user_classes_view8')->where('role',1)->get();
         return $user;
     }
+    public function users_class_view($class_id){
+        $user=DB::table('user_classes_view8')->where('class_id',$class_id)->get();
+        return $user;
+    }
     public function report_query(Request $request)
     {
         $f_name=$request->input('f_name');

@@ -24,18 +24,17 @@ class ExamUserController extends Controller
     public function remove($id){
         $result = ExamUser::find($id)->delete();     
     }
-    public function update(ExamUserRequest $request,$id){
+    public function update(Request $request,$id){
         $exams = ExamUser::find($id);
-        $exams->update(['score'=>$request->score,
-                        'date_shamsi'=>$request->date_shamsi,
-                        'exam_id'=>$request->exam_id,
-                        'user_id'=>$request->user_id]);
+        $exams->update(['score'=>$request->score,                        
+                        'exam_id'=>$request->exam_id]);
         return $exams;  
     }
     public function store(ExamUserRequest $request){
         ExamUser::create(['score' => $request->score,
                           'date_shamsi' => $request->date_shamsi,
                           'exam_id' => $request->exam_id,
+                          'grade_id' => $request->grade_id,
                           'user_id' => $request->user_id]); 
         return $request;
     }

@@ -40,6 +40,7 @@ Route::put('/school/exam/exam-type/update/{id}',[ExamTypeController::class,'upda
 Route::post('/school/exam/exam-type/store',[ExamTypeController::class,'store']);
 /* user table routes */
 Route::get('/school/user/users',[UserController::class,'users']);
+Route::get('/school/user/users-view-by-class-id/{class_id}',[UserController::class,'users_class_view']);
 Route::get('/school/user/users-view',[UserController::class,'users_view']);
 Route::post('/school/user/users-view-search',[UserController::class,'report_query']);
 Route::get('/school/user/students',[UserController::class,'students']);
@@ -90,6 +91,7 @@ Route::post('/school/classroom/store',[ClassRoomController::class,'store']);
 Route::get('/school/exam/exam_names',[ExamNameController::class,'exams']);
 Route::get('/school/exam/exam-view',[ExamNameController::class,'exams_view']);
 Route::get('/school/exam/exam-view/{id}',[ExamNameController::class,'exams_view_grade_id']);
+Route::get('/school/exam/exam-view2/{id}',[ExamNameController::class,'exams_view_exam_id']);
 Route::get('/school/exam/{id}',[ExamNameController::class,'exam']);
 Route::get('/school/exam/exam-by-grade/{id}',[ExamNameController::class,'exam_by_grade']);
 Route::delete('/school/exam/remove/{id}',[ExamNameController::class,'remove']);
@@ -117,6 +119,7 @@ Route::post('/school/class-program/store',[ClassProgramController::class,'store'
 /* exam table routes */
 Route::get('/school/exam-user/exams',[ExamUserController::class,'exams']);
 Route::get('/school/exam-user/exams-view/{user_id}/{lesson_id}/{grade_id}',[ExamUserController::class,'exams_view']);
+
 Route::get('/school/exam-user/user/{id}',[ExamUserController::class,'exam']);
 Route::delete('/school/exam-user/remove/{id}',[ExamUserController::class,'remove']);
 Route::put('/school/exam-user/update/{id}',[ExamUserController::class,'update']);
