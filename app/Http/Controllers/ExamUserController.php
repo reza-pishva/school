@@ -21,6 +21,24 @@ class ExamUserController extends Controller
                                                       where('lesson_id',$lesson_id)->get();
         return $exams;
     }
+
+
+    public function exams_score_avg($grade_id,$user_id){
+        $lessons = DB::table('lessons')->where('grade_id',$grade_id)->select('id')->get();
+        $lesson_ids=[];
+        foreach($lessons as $lesson){
+            $lesson_ids[]=$lesson->id;
+        }
+        $avg_score=[];
+        foreach($lesson_ids as $lesson_id){
+            $score = DB::table('exam_user_lesson_view3')->where('user_id',$user_id)->where('lesson_id',$lesson_id)->avg('score');
+            $avg_score[]=$score;
+        }
+        return $avg_score;
+    }
+
+
+
     public function remove($id){
         $result = ExamUser::find($id)->delete();     
     }
