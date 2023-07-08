@@ -41,6 +41,23 @@ class ExamUserController extends Controller
         return [$avg_score,$avg_score_grade];
     }
 
+    public function exams_score_user_linechart($grade_id,$user_id,$lesson_id){
+        $exams = DB::table('exam_user_lesson_view3')->where('grade_id',$grade_id)->where('lesson_id',$lesson_id)->select('id')->get();
+        $exam_ids=[];
+        foreach($exams as $exam){
+            $exam_ids[]=$exam;
+        }
+        $scores=[];
+        $avg_score_grade=[];
+        foreach($exam_ids as $exam_id){
+            $score = DB::table('exam_user_lesson_view3')->where('user_id',$user_id)->where('id',$exam_id)->select('score')->get();
+            $scores[]=$score;
+            $score2 = DB::table('exam_user_lesson_view3')->where('grade_id',$grade_id)->where('id',$exam_id)->avg('score');
+            $avg_score_grade[]=$score2;
+        }        
+        return [$scores,$avg_score_grade];
+    }
+
     public function remove($id){
         $result = ExamUser::find($id)->delete();     
     }

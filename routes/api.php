@@ -122,6 +122,7 @@ Route::get('/school/exam-user/exams-view/{user_id}/{lesson_id}/{grade_id}',[Exam
 
 Route::get('/school/exam-user/user/{id}',[ExamUserController::class,'exam']);
 Route::get('/school/exam-user/user/{grade_id}/{user_id}',[ExamUserController::class,'exams_score_avg']);
+Route::get('/school/exam-user/user/{grade_id}/{user_id}/{lesson_id}',[ExamUserController::class,'exams_score_user_linechart']);
 Route::delete('/school/exam-user/remove/{id}',[ExamUserController::class,'remove']);
 Route::put('/school/exam-user/update/{id}',[ExamUserController::class,'update']);
 Route::post('/school/user-exam/store',[ExamUserController::class,'store']);
