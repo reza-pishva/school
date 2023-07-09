@@ -42,17 +42,22 @@ class ExamUserController extends Controller
     }
 
     public function exams_score_user_linechart($grade_id,$user_id,$lesson_id){
-        $exams = DB::table('exam_user_lesson_view3')->where('grade_id',$grade_id)->where('lesson_id',$lesson_id)->select('id')->get();
+        $exams = DB::table('exam_user_lesson_view3')->where('grade_id',$grade_id)
+                                                    ->where('lesson_id',$lesson_id)
+                                                    ->where('user_id',$user_id)
+                                                    ->select('exam_id')->get();
         $exam_ids=[];
         foreach($exams as $exam){
-            $exam_ids[]=$exam;
+            $exam_ids[]=$exam->exam_id;
         }
         $scores=[];
         $avg_score_grade=[];
         foreach($exam_ids as $exam_id){
-            $score = DB::table('exam_user_lesson_view3')->where('user_id',$user_id)->where('id',$exam_id)->select('score')->get();
+            $score = DB::table('exam_users')->where('user_id',$user_id)
+                                                        ->where('exam_id',$exam_id)
+                                                        ->first()->score;
             $scores[]=$score;
-            $score2 = DB::table('exam_user_lesson_view3')->where('grade_id',$grade_id)->where('id',$exam_id)->avg('score');
+            $score2 = DB::table('exam_users')->where('grade_id',$grade_id)->where('exam_id',$exam_id)->avg('score');
             $avg_score_grade[]=$score2;
         }        
         return [$scores,$avg_score_grade];

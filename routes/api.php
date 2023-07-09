@@ -119,7 +119,6 @@ Route::post('/school/class-program/store',[ClassProgramController::class,'store'
 /* exam table routes */
 Route::get('/school/exam-user/exams',[ExamUserController::class,'exams']);
 Route::get('/school/exam-user/exams-view/{user_id}/{lesson_id}/{grade_id}',[ExamUserController::class,'exams_view']);
-
 Route::get('/school/exam-user/user/{id}',[ExamUserController::class,'exam']);
 Route::get('/school/exam-user/user/{grade_id}/{user_id}',[ExamUserController::class,'exams_score_avg']);
 Route::get('/school/exam-user/user/{grade_id}/{user_id}/{lesson_id}',[ExamUserController::class,'exams_score_user_linechart']);
