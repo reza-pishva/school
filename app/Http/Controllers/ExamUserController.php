@@ -59,8 +59,10 @@ class ExamUserController extends Controller
             $scores[]=$score;
             $score2 = DB::table('exam_users')->where('grade_id',$grade_id)->where('exam_id',$exam_id)->avg('score');
             $avg_score_grade[]=$score2;
+
+
         }        
-        return [$scores,$avg_score_grade];
+        return [$scores,$avg_score_grade,$exam_ids];
     }
 
     public function remove($id){
